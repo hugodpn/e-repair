@@ -1,0 +1,36 @@
+# == Schema Information
+# Schema version: 20100505020302
+#
+# Table name: equipment_types
+#
+#  id         :integer(4)      not null, primary key
+#  name       :string(255)
+#  created_at :datetime
+#  updated_at :datetime
+#
+
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  id: 1
+  name: Detector Fetal
+
+two:
+  id: 2
+  name: Dispenser
+
+three:
+  id: 3
+  name: Ecógrafo
+
+four:
+  id: 4
+  name: Ecotomógrafo
+
+five:
+  id: 5
+  name: Electrobisturí
+
+six:
+  id: 6
+  name: Electrocardiógrafo

@@ -1,0 +1,30 @@
+<h1><%= t('users.listing_users') %></h1>
+
+<table class="normal_table">
+  <th><%= t('users.fields.username') %></th>
+  <th>Name</th>
+  <th><%= t('users.fields.email') %></th>
+  <th><%= t('users.fields.enabled') %></th>
+  <th><%= t('users.fields.roles') %></th>
+  <% @users.each do |user| %>
+    <tr>
+      <td><%= user.login %></td>
+      <td><%= "#{user.first_name}, #{user.last_name}" %></td>
+      <td><%= user.email %></td>
+      <td><%= user.is_enabled %></td>
+      <td>
+        <% user.roles.each do |r| %>
+          <%= " #{r.name} " %>
+        <% end %>
+      </td>
+      <td><%= link_to t('general.show'), [:admin, user] %></td>
+      <td><%= link_to t('general.edit'), edit_admin_user_path(user) %></td>
+      <td><%= link_to t('general.destroy'), [:admin, user], :confirm => t('general.confirmation'), :method => :delete %></td>
+    </tr>
+  <% end %>
+</table>
+
+<br />
+
+<%= link_to t('general.new'), new_admin_user_path %>
+

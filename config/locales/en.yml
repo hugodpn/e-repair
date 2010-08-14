@@ -1,0 +1,99 @@
+# Sample localization file for English. Add more files in this directory for other locales.
+# See http://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
+
+en:
+  application:
+    title: "e-Repair"
+    user: "User"
+    info: "Information"
+   
+  menu:
+    main:
+      title: "Main"
+      home: "Home"
+    admin:
+      title: "Administrator"
+      articles: "Articles"
+      categories: "Categories"
+      users: "Users"
+      roles: "Roles"
+    user:
+      title: "User"
+      edit_profile: "Edit Profile"
+      login: "Log in"
+      logout: "Log out"
+      register: "Register"
+
+  access:
+    title: "Login"
+    login: "Login"
+    disabled: "Sorry, login has been disabled for your account"
+    password: "Password"
+    login_msg: "Successfully logged in."
+    logout_msg: "Successfully logged out."
+
+  users:
+    edit_user: "Edit User"
+    new_user: "New User"
+    register: "Register User"
+    listing_users: "Listing Users"
+    editing_user: "Editing User"
+    show_user: "Showing User"
+    fields:
+      username: "User Name"
+      email: "e-Mail"
+      password: "Password"
+      password_confirmation: "Password confirmation"
+      language: "Language"
+      enabled: "Enabled"
+      roles: "Roles"
+      login_count: "Login Count"
+      fail_login_count: "Fail Login Count"
+      last_request: "Last Request"
+      current_login: "Current Login"
+      last_login: "Last Login"
+      current_login_ip:  "Current Login IP"
+      last_login_ip: "Last Login IP"
+      is_admin: "Is admin?"
+      created: "Created"
+      updated: "Updated"
+
+  articles:
+    listing_articles: "Listing Articles"
+    new_article: "New Article"
+    edit_article: "Editing Article"
+    show_article: "Showing Article"
+    fields:
+      title: "Title"
+      body: "Body"
+      category: "Category"
+      created: "Created"
+
+  categories:
+    listing_categories: "Listing Categories"
+    new_category: "New Category"
+    edit_category: "Editing Category"
+    show_category: "Showing Category"
+    fields:
+      name: "Name"
+
+  roles:
+    listing_roles: "Listing Roles"
+    new_role: "New Role"
+    edit_role: "Editing Role"
+    show_role: "Showing Role"
+    fields:
+      name: "Name"
+
+  main:
+    title: "Dashboard"
+
+  general:
+    edit: "Edit"
+    new: "New"
+    show: "Show"
+    destroy: "Destroy"
+    submit: "Submit"
+    confirmation: "Are you sure?"
+    back: "Back"
+    update: "Update"

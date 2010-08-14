@@ -1,0 +1,35 @@
+
+#header_panel{
+}
+
+#left_panel{
+    float: left;
+    height: 100%;
+}
+
+#right_panel{
+    float: right;
+    height: 100%;
+}
+
+#content_panel{
+    padding-left: 220px;
+    padding-right: 130px;
+}
+
+table.normal_table{
+    border: 1px solid;
+}
+table.normal_table td{
+    border: 1px solid;
+}
+
+table.normal_table th{
+    background-color: silver;
+}
+
+#message_box {
+    color: #0033cc;
+}
+
+

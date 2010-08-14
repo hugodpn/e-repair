@@ -1,0 +1,62 @@
+<% form_for([:admin, @user]) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :login, t('users.fields.username') %><br />
+    <%= f.text_field :login %>
+  </p>
+  <p>
+    <%= f.label :first_name %><br />
+    <%= f.text_field :first_name %>
+  </p>
+  <p>
+    <%= f.label :last_name %><br />
+    <%= f.text_field :last_name %>
+  </p>
+  <p>
+    <%= f.label :phone %><br />
+    <%= f.text_field :phone %>
+  </p>
+  <p>
+    <%= f.label :address %><br />
+    <%= f.text_field :address %>
+  </p>
+  <p>
+    <%= f.label :email, t('users.fields.email') %><br />
+    <%= f.text_field :email %>
+  </p>
+  <p>
+    <%= f.label :password, t('users.fields.password') %><br />
+    <%= f.password_field :password %>
+  </p>
+  <p>
+    <%= f.label :password_confirmation, t('users.fields.password_confirmation') %><br />
+    <%= f.password_field :password_confirmation %>
+  </p>
+  <!--
+  <p>
+  <%#= f.label :is_admin %><br />
+  <%#= f.check_box :is_admin %>
+  </p>
+  -->
+  <p>
+    <%= f.label :is_enabled, t('users.fields.enabled') %><br />
+    <%= f.check_box :is_enabled %>
+  </p>
+  <p>
+    <%= f.label :language, t('users.fields.language') %><br />
+    <%= f.select :language, [['English', 'en'], ['Español', 'es']] %>
+  </p>
+
+  <p>
+    <%= f.label :roles, t('users.fields.roles') %><br />
+    <% @roles.each do |role| %>
+      <%= check_box_tag "user[role_ids][]", role.id, @user.roles.include?(role) %>
+      <%= role.name %><br />
+    <% end %>
+  </p>
+
+  <p>
+    <%= f.submit t('general.submit') %>
+  </p>
+<% end %>

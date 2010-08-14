@@ -1,0 +1,15 @@
+<h1><%= t('articles.edit_article') %></h1>
+
+<% form_for([:admin, @article]) do |f| %>
+  <%= f.error_messages %>
+
+
+  <%= render :partial => "form", :locals => { :f => f } %>
+
+  <p>
+    <%= f.submit t('general.update') %>
+  </p>
+<% end %>
+
+<%= link_to t('general.show'), [:admin, @article] %> |
+<%= link_to t('general.back'), admin_articles_path %>

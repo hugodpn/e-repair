@@ -1,0 +1,22 @@
+<h1>Listing departments</h1>
+
+<table class="normal_table">
+  <tr>
+    <th>Name</th>
+    <th>Alias</th>
+  </tr>
+
+<% @departments.each do |department| %>
+  <tr>
+    <td><%=h department.name %></td>
+    <td><%=h department.alias %></td>
+    <td><%= link_to 'Show', [:admin, department] %></td>
+    <td><%= link_to 'Edit', edit_admin_department_path(department) %></td>
+    <td><%= link_to 'Destroy', [:admin, department], :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New department', new_admin_department_path %>

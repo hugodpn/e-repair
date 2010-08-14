@@ -1,0 +1,53 @@
+<p>
+  <b>Equipment miscellaneou:</b>
+  <%=h @repair.equipment_miscellaneou_id %>
+</p>
+
+<p>
+  <b>Location:</b>
+  <%=h @repair.location %>
+</p>
+
+<p>
+  <b>Date in:</b>
+  <%=h @repair.date_in %>
+</p>
+
+<p>
+  <b>Fault reported:</b>
+  <%=h @repair.fault_reported %>
+</p>
+
+<p>
+  <b>Reason fault:</b>
+  <%=h @repair.reason_fault_id %>
+</p>
+
+<p>
+  <b>Fix:</b>
+  <%=h @repair.fix %>
+</p>
+
+<p>
+  <b>Date out:</b>
+  <%=h @repair.date_out %>
+</p>
+
+<p>
+  <b>Cost:</b>
+  <%=h @repair.cost %>
+</p>
+
+<p>
+  <b>Outsource cost:</b>
+  <%=h @repair.outsource_cost %>
+</p>
+
+<p>
+  <b>Observations:</b>
+  <%=h @repair.observations %>
+</p>
+
+
+<%= link_to 'Edit', edit_admin_repair_path(@repair) %> |
+<%= link_to 'Back', admin_repairs_path %>

@@ -1,0 +1,50 @@
+<h1>Showing Equipment Miscellaneous</h1>
+
+<p>
+  <b>Equipment type:</b>
+  <%=h @equipment_miscellaneou.equipment_type.name %>
+</p>
+
+<p>
+  <b>Brand:</b>
+  <%=h @equipment_miscellaneou.brand %>
+</p>
+
+<p>
+  <b>Model:</b>
+  <%=h @equipment_miscellaneou.model %>
+</p>
+
+<p>
+  <b>Serial number:</b>
+  <%=h @equipment_miscellaneou.serial_number %>
+</p>
+
+<p>
+  <b>Inventory number:</b>
+  <%=h @equipment_miscellaneou.inventory_number %>
+</p>
+
+<p>
+  <b>Equipment location:</b>
+  <%=h @equipment_miscellaneou.equipment_location.name %>
+</p>
+
+<p>
+  <b>Department:</b>
+  <%=h @equipment_miscellaneou.department.name %>
+</p>
+
+<p>
+  <b>Cost:</b>
+  <%=h @equipment_miscellaneou.cost %>
+</p>
+
+<p>
+  <b>Observations:</b>
+  <%=h @equipment_miscellaneou.observations %>
+</p>
+
+
+<%= link_to 'Edit', edit_admin_equipment_miscellaneou_path(@equipment_miscellaneou) %> |
+<%= link_to 'Back', admin_equipment_miscellaneous_path %>

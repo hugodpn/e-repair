@@ -1,0 +1,6 @@
+<h1><%= t('users.new_user') %></h1>
+
+<%= render @user %>
+
+<%= link_to t('general.show'), [:admin, @user] %> |
+<%= link_to t('general.back'), admin_users_path %>

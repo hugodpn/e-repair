@@ -1,0 +1,16 @@
+<h1>Editing reason_fault</h1>
+
+<% form_for([:admin, @reason_fault]) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </p>
+  <p>
+    <%= f.submit 'Update' %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', [:admin, @reason_fault] %> |
+<%= link_to 'Back', admin_reason_faults_path %>

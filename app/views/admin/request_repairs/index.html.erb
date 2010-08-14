@@ -1,0 +1,37 @@
+<h1>Listing request repairs</h1>
+
+<p>
+  <%= link_to 'Break', "/admin/request_repairs" %> -
+  <%= link_to 'Repaired', "/admin/request_repairs?all=1" %>
+</p>
+
+<p>
+  <%= link_to 'New request repair', new_admin_request_repair_path %>
+</p>
+
+<table class="normal_table">
+  <tr>
+    <th>Date</th>
+    <th>Department</th>
+    <th>Reason</th>
+    <th>User</th>
+  </tr>
+
+  <% @request_repairs.each do |request_repair| %>
+    <tr>
+      <td><%=h request_repair.date %></td>
+      <td><%=h request_repair.department.name %></td>
+      <td><%=h request_repair.reason %></td>
+      <td><%=h request_repair.user.login %></td>
+      <td><%= link_to 'Show', [:admin, request_repair] %></td>
+      <td><%= link_to 'Edit', edit_admin_request_repair_path(request_repair) %></td>
+      <td><%= link_to 'Destroy', [:admin, request_repair], :confirm => 'Are you sure?', :method => :delete %></td>
+      <td><%= link_to 'Repair', '/admin/repairs/new?request=' + request_repair.id.to_s %></td>
+    </tr>
+  <% end %>
+</table>
+<%= will_paginate @request_repairs unless params[:all].nil? %>
+<br />
+<p>
+  <%= link_to 'New request repair', new_admin_request_repair_path %>
+</p>

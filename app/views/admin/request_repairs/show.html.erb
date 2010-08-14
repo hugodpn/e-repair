@@ -1,0 +1,30 @@
+<h1>Showing Request Repair</h1>
+
+<p>
+  <b>Date:</b>
+  <%=h @request_repair.date %>
+</p>
+
+<p>
+  <b>Department:</b>
+  <%=h @request_repair.department.name %>
+</p>
+
+<p>
+  <b>Reason:</b>
+  <%=h @request_repair.reason %>
+</p>
+
+<p>
+  <b>Solution:</b>
+  <%=h @request_repair.solution %>
+</p>
+
+<p>
+  <b>Repair:</b>
+  <%=h (@request_repair.repair_id != nil)? "true" : "false" %>
+</p>
+
+
+<%= link_to 'Edit', edit_admin_request_repair_path(@request_repair) %> |
+<%= link_to 'Back', admin_request_repairs_path %>

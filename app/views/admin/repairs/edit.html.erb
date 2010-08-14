@@ -1,0 +1,52 @@
+<h1>Editing repair</h1>
+
+<% form_for([:admin, @repair]) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :equipment_miscellaneou_id %><br />
+    <%= f.select("equipment_miscellaneou_id", EquipmentMiscellaneou.all.collect {|em| [ "#{em.department.name} - #{em.equipment_type.name} - #{em.model}" , em.id ] }, { :include_blank => false }) %>
+  </p>
+  <p>
+    <%= f.label :location %><br />
+    <%= f.text_field :location %>
+  </p>
+  <p>
+    <%= f.label :date_in %><br />
+    <%= f.date_select :date_in %>
+  </p>
+  <p>
+    <%= f.label :fault_reported %><br />
+    <%= f.text_area :fault_reported, :size => "50x3" %>
+  </p>
+  <p>
+    <%= f.label :reason_fault_id %><br />
+    <%= f.select("reason_fault_id", ReasonFault.all.collect {|r| [ r.name , r.id ] }, { :include_blank => false }) %>
+  </p>
+  <p>
+    <%= f.label :fix %><br />
+    <%= f.text_area :fix, :size => "50x3" %>
+  </p>
+  <p>
+    <%= f.label :date_out %><br />
+    <%= f.date_select :date_out, :include_blank => true %>
+  </p>
+  <p>
+    <%= f.label :cost %><br />
+    <%= f.text_field :cost %>
+  </p>
+  <p>
+    <%= f.label :outsource_cost %><br />
+    <%= f.text_field :outsource_cost %>
+  </p>
+  <p>
+    <%= f.label :observations %><br />
+    <%= f.text_area :observations, :size => "50x3" %>
+  </p>
+  <p>
+    <%= f.submit 'Update' %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', [:admin, @repair] %> |
+<%= link_to 'Back', admin_repairs_path %>

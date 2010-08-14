@@ -1,0 +1,20 @@
+<h1>Listing equipment types</h1>
+
+<table class="normal_table">
+  <tr>
+    <th>Name</th>
+  </tr>
+
+<% @equipment_types.each do |equipment_type| %>
+  <tr>
+    <td><%=h equipment_type.name %></td>
+    <td><%= link_to 'Show', [:admin, equipment_type] %></td>
+    <td><%= link_to 'Edit', edit_admin_equipment_type_path(equipment_type) %></td>
+    <td><%= link_to 'Destroy', [:admin, equipment_type], :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New equipment type', new_admin_equipment_type_path %>

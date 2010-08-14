@@ -1,0 +1,24 @@
+<h1><%= t('roles.edit_role') %></h1>
+
+<% form_for([:admin, @role]) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :name, t('roles.fields.name') %><br />
+    <%= f.text_field :name %>
+  </p>
+  <p>
+    <%= f.submit t('general.submit') %>
+  </p>
+<% end %>
+
+<hr />
+
+
+<%= render :partial => "permissions" %>
+
+
+<hr />
+
+<%= link_to 'Show', [:admin, @role] %> |
+<%= link_to 'Back', admin_roles_path %>

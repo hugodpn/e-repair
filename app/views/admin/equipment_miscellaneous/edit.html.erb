@@ -1,0 +1,48 @@
+<h1>Editing equipment miscellaneou</h1>
+
+<% form_for([:admin, @equipment_miscellaneou]) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :equipment_type_id %><br />
+    <%= f.select("equipment_type_id", EquipmentType.all.collect {|e| [ e.name, e.id ] }, { :include_blank => false }) %>
+  </p>
+  <p>
+    <%= f.label :brand %><br />
+    <%= f.text_field :brand %>
+  </p>
+  <p>
+    <%= f.label :model %><br />
+    <%= f.text_field :model %>
+  </p>
+  <p>
+    <%= f.label :serial_number %><br />
+    <%= f.text_field :serial_number %>
+  </p>
+  <p>
+    <%= f.label :inventory_number %><br />
+    <%= f.text_field :inventory_number %>
+  </p>
+  <p>
+    <%= f.label :equipment_location_id %><br />
+    <%= f.select("equipment_location_id", EquipmentLocation.all.collect {|e| [ e.name, e.id ] }, { :include_blank => false }) %>
+  </p>
+  <p>
+    <%= f.label :department_id %><br />
+    <%= f.select("department_id", Department.all.collect {|d| [ d.name, d.id ] }, { :include_blank => false }) %>
+  </p>
+  <p>
+    <%= f.label :cost %><br />
+    <%= f.text_field :cost %>
+  </p>
+  <p>
+    <%= f.label :observations %><br />
+    <%= f.text_area :observations, :size => "40x4" %>
+  </p>
+  <p>
+    <%= f.submit 'Update' %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', [:admin, @equipment_miscellaneou] %> |
+<%= link_to 'Back', admin_equipment_miscellaneous_path %>

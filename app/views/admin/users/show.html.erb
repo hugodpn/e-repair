@@ -1,0 +1,100 @@
+<h1><%= t('users.show_user') %></h1>
+<p>
+  <b><%= t('users.fields.username') %>:</b>
+  <%=h @user.login %>
+</p>
+
+<p>
+  <b>First Name:</b>
+  <%=h @user.first_name %>
+</p>
+
+<p>
+  <b>Last Name:</b>
+  <%=h @user.last_name %>
+</p>
+
+<p>
+  <b>Phone:</b>
+  <%=h @user.phone %>
+</p>
+
+<p>
+  <b>Address:</b>
+  <%=h @user.address %>
+</p>
+
+<p>
+  <b><%= t('users.fields.email') %>:</b>
+  <%=h @user.email %>
+</p>
+
+<p>
+  <b><%= t('users.fields.login_count') %>:</b>
+  <%=h @user.login_count %>
+</p>
+
+<p>
+  <b><%= t('users.fields.fail_login_count') %>:</b>
+  <%=h @user.failed_login_count %>
+</p>
+
+<p>
+  <b><%= t('users.fields.last_request') %>:</b>
+  <%=h @user.last_request_at %>
+</p>
+
+<p>
+  <b><%= t('users.fields.current_login') %>:</b>
+  <%=h @user.current_login_at %>
+</p>
+
+<p>
+  <b><%= t('users.fields.last_login') %>:</b>
+  <%=h @user.last_login_at %>
+</p>
+
+<p>
+  <b><%= t('users.fields.current_login_ip') %>current_login_ip:</b>
+  <%=h @user.current_login_ip %>
+</p>
+
+<p>
+  <b><%= t('users.fields.last_login_ip') %>:</b>
+  <%=h @user.last_login_ip %>
+</p>
+
+<p>
+  <b><%= t('users.fields.is_admin') %>:</b>
+  <%=h @user.is_admin %>
+</p>
+
+<p>
+  <b><%= t('users.fields.created') %>:</b>
+  <%=h @user.created_at %>
+</p>
+
+<p>
+  <b><%= t('users.fields.updated') %>:</b>
+  <%=h @user.updated_at %>
+</p>
+
+<p>
+  <b><%= t('users.fields.enabled') %>:</b>
+  <%=h @user.is_enabled %>
+</p>
+
+<p>
+  <b><%= t('users.fields.language') %>:</b>
+  <%=h @user.language %>
+</p>
+
+<p>
+  <b><%= t('users.fields.roles') %>:</b>
+  <% @user.roles.each do |r| %>
+    <%= r.name %>, 
+  <% end %>
+</p>
+
+<%= link_to t('general.edit'), edit_admin_user_path(@user) %> |
+<%= link_to t('general.back'), admin_users_path %>
