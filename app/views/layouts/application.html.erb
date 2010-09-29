@@ -17,14 +17,33 @@
       <div id="menu">
         <ul id="nav">
           <li id="home" class="activelink"><a href="#">Home</a></li>
-          <li id="who"><a href="#">About</a></li>
-          <li id="prod"><a href="#">Product</a></li>
-          <li id="serv"><a href="#">Services</a></li>
-          <li id="cont"><a href="#">Contact us</a></li>
+          <li id="prod"><a href="#">Administrator</a></li>
+          <li id="serv"><a href="#">Users</a></li>
+          <li id="cont"><%= link_to t('menu.user.logout'), logout_path %></li>
         </ul>
       </div>
     </div>
     <div id="container">
+
+
+
+
+      <div id="side">
+
+        <% if current_user %>
+        <ul id="intro">
+          <li id="mission">
+            <h3><%= t('application.info') %></h3>
+            <p>
+              <%= t('application.user') %>: <%= current_user.login %><br />
+              <%= link_to t('menu.user.logout'), logout_path %>
+            </p>
+          </li>
+        </ul>
+
+          <%= render :partial => "/layouts/menu" %>
+        <% end %>
+      </div>
 
       <div id="content">
 
@@ -32,11 +51,6 @@
         <%= yield %>
 
       </div>
-
-      <div id="side">
-        <%= render :partial => "/layouts/menu" %>
-      </div>
-
 
       <div id="footer">
         <p>DHPN&trade; - hpacini@dhpn.com.ar</p>
