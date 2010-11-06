@@ -16,8 +16,8 @@ Rails::Initializer.run do |config|
   # config.gem "sqlite3-ruby", :lib => "sqlite3"
   # config.gem "aws-s3", :lib => "aws/s3"
   config.gem "authlogic",       :version => '2.1.6'
-  config.gem "rspec",           :version => '>=1.3.0',     :lib => 'spec'
-  config.gem "rspec-rails",     :version => '>=1.3.2',     :lib => 'spec'
+  config.gem "rspec",           :version => '=1.3.0',     :lib => 'spec'
+  config.gem "rspec-rails",     :version => '=1.3.2',     :lib => 'spec'
   config.gem "factory_girl",    :version => '>= 1.3.2',    :lib => 'factory_girl'
   config.gem "will_paginate",   :version => '>=2.3.14'
 

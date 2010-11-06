@@ -1,29 +1,47 @@
 <ul class="postnav">
 
-  <% if current_user && ( current_user.has_perm?("articles_article_can_list") or current_user.has_perm?("users_user_can_list") or
-        current_user.has_perm?("roles_role_can_list") ) %>
+  <% if is_config_menu  %>
+    <% if current_user && ( current_user.has_perm?("articles_article_can_list") or
+          current_user.has_perm?("users_user_can_list") or current_user.has_perm?("roles_role_can_list") ) %>
 
-    <li><%= link_to "Department", admin_departments_path %></li>
-    <li><%= link_to "Equipment Types", admin_equipment_types_path %></li>
-    <li><%= link_to "Equipment Locations", admin_equipment_locations_path %></li>
-    <li><%= link_to "Equipments", admin_equipment_miscellaneous_path %></li>
-    <li><%= link_to "Reason Fault", admin_reason_faults_path %></li>
-    
+      <li><%= link_to "Department", admin_departments_path %></li>
+      <li><%= link_to "Equipment Types", admin_equipment_types_path %></li>
+      <li><%= link_to "Equipment Locations", admin_equipment_locations_path %></li>
+      <li><%= link_to "Equipments", admin_equipment_miscellaneous_path %></li>
+      <li><%= link_to "Reason Fault", admin_reason_faults_path %></li>
+
+    <% end %>
+
+    <li><hr /></li>
+
   <% end %>
 
-  <li><hr /></li>
+  <% if is_home_menu %>
+    <li><%= link_to "Request Repair", admin_request_repairs_path %></li>
+    <li><%= link_to "Repair", admin_repairs_path %></li>
+    <li><%= link_to "Repaired","/admin/repairs?repaired=true"  %></li>
+    <li><hr /></li>
+  <% end %>
 
-  <li><%= link_to "Request Repair", admin_request_repairs_path %></li>
-  <li><%= link_to "Repair", admin_repairs_path %></li>
-  <li><%= link_to "Repaired","/admin/repairs?repaired=true"  %></li>
-  <li><hr /></li>
-  <!--
-  <% if current_user.has_perm?("articles_article_can_list") %><li><%= link_to t('menu.admin.articles'), admin_articles_path %></li> <% end %>
-  <% if current_user.has_perm?("categories_category_can_list") %><li><%= link_to t('menu.admin.categories'), admin_categories_path %></li><% end %>
-  -->
-  <% if current_user.has_perm?("users_user_can_list") %><li><%= link_to t('menu.admin.users'), admin_users_path %></li><% end %>
-  <% if current_user.has_perm?("roles_role_can_list") %><li><%= link_to t('menu.admin.roles'), admin_roles_path %></li><% end %>
-  <li><hr /></li>
+  <% if is_report_menu %>
+    <li><%= link_to "Report 1", "/reports" %></li>
+    <li><%= link_to "Report 2", "/reports" %></li>
+    <li><%= link_to "Report 3", "/reports"  %></li>
+    <li><%= link_to "Report 4", "/reports"  %></li>
+    <li><%= link_to "Report 5", "/reports"  %></li>
+    <li><%= link_to "Report 6", "/reports"  %></li>
+    <li><hr /></li>
+  <% end %>
+
+  <% if is_admin_menu %>
+    <!--
+    <% if current_user.has_perm?("articles_article_can_list") %><li><%= link_to t('menu.admin.articles'), admin_articles_path %></li> <% end %>
+    <% if current_user.has_perm?("categories_category_can_list") %><li><%= link_to t('menu.admin.categories'), admin_categories_path %></li><% end %>
+    -->
+    <% if current_user.has_perm?("users_user_can_list") %><li><%= link_to t('menu.admin.users'), admin_users_path %></li><% end %>
+    <% if current_user.has_perm?("roles_role_can_list") %><li><%= link_to t('menu.admin.roles'), admin_roles_path %></li><% end %>
+    <li><hr /></li>
+  <% end %>
 
   <% if current_user %>
     <li><%= link_to t('menu.user.edit_profile'), edit_user_path(:current) %></li>

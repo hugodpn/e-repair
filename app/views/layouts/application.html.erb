@@ -16,11 +16,11 @@
 
       <div id="menu">
         <ul id="nav">
-          <li id="home" <%= selected_header_link(["request_repairs", "repairs"]) %>><%= link_to "Home", admin_request_repairs_path %></li>
-          <li id="report" <%= selected_header_link([]) %>><a href="#">Reports</a></li>
-          <li id="config" <%= selected_header_link(["departments", "equipment_types", "equipment_locations", "equipment_miscellaneous", "reason_faults"]) %>><%= link_to 'Config', admin_departments_path %></li>
-          <li id="admin" <%= selected_header_link(["users", "roles"]) %>><%= link_to 'Administrator', admin_users_path %></li>
-          <li id="help" <%= selected_header_link([]) %>><a href="#">Help</a></li>
+          <li id="home" <%= "class=\"activelink\"" if is_home_menu  %>><%= link_to "Home", admin_request_repairs_path %></li>
+          <li id="report" <%= "class=\"activelink\"" if is_report_menu  %>><a href="/reports">Reports</a></li>
+          <li id="config" <%= "class=\"activelink\"" if is_config_menu  %>><%= link_to 'Config', admin_departments_path %></li>
+          <li id="admin" <%= "class=\"activelink\"" if is_admin_menu  %>><%= link_to 'Administrator', admin_users_path %></li>
+          <li id="help" <%= "class=\"activelink\"" if is_help_menu  %>><a href="/helps">Help</a></li>
         </ul>
       </div>
     </div>

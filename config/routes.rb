@@ -5,6 +5,8 @@ ActionController::Routing::Routes.draw do |map|
 
   map.resources :user_sessions
   map.resources :users
+  map.resources :reports
+  map.resources :helps
 
   map.namespace :admin do |admin|
     admin.resources :articles
