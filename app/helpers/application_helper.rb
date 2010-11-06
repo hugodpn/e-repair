@@ -11,7 +11,7 @@ module ApplicationHelper
   end
 
   def is_home_menu
-    ["request_repairs", "repairs"].include?(controller.controller_name)
+    ["main", "request_repairs", "repairs"].include?(controller.controller_name)
   end
 
   def is_report_menu

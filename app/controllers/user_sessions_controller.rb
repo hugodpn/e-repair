@@ -10,7 +10,7 @@ class UserSessionsController < ApplicationController
     @user_session = UserSession.new(params[:user_session])
     if @user_session.save
       flash[:notice] = t('access.login_msg')
-      redirect_to admin_users_url
+      redirect_to "/"
     else
       render :action => 'new'
     end

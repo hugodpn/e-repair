@@ -9,6 +9,12 @@ es:
 
 
   menu:
+    home:
+      title: "Inicio"
+      main: "Inicio"
+      request_repair: "Llamado"
+      repair: "Reparar"
+      repaired: "Reparados"
     main:
       title: "Inicio"
       home: "Inicio"

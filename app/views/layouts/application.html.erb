@@ -16,7 +16,7 @@
 
       <div id="menu">
         <ul id="nav">
-          <li id="home" <%= "class=\"activelink\"" if is_home_menu  %>><%= link_to "Home", admin_request_repairs_path %></li>
+          <li id="home" <%= "class=\"activelink\"" if is_home_menu  %>><%= link_to t('menu.home.title'), "/" %></li>
           <li id="report" <%= "class=\"activelink\"" if is_report_menu  %>><a href="/reports">Reports</a></li>
           <li id="config" <%= "class=\"activelink\"" if is_config_menu  %>><%= link_to 'Config', admin_departments_path %></li>
           <li id="admin" <%= "class=\"activelink\"" if is_admin_menu  %>><%= link_to 'Administrator', admin_users_path %></li>

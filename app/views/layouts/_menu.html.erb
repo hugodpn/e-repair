@@ -17,9 +17,10 @@
   <% end %>
 
   <% if is_home_menu %>
-    <li><%= link_to "Request Repair", admin_request_repairs_path %></li>
-    <li><%= link_to "Repair", admin_repairs_path %></li>
-    <li><%= link_to "Repaired","/admin/repairs?repaired=true"  %></li>
+    <li><%= link_to t('menu.home.main'), "/" %></li>
+    <li><%= link_to t('menu.home.request_repair'), admin_request_repairs_path %></li>
+    <li><%= link_to t('menu.home.repair'), admin_repairs_path %></li>
+    <li><%= link_to t('menu.home.repaired'),"/admin/repairs?repaired=true"  %></li>
     <li><hr /></li>
   <% end %>
 
