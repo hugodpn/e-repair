@@ -12,8 +12,9 @@ es:
     home:
       title: "Inicio"
       main: "Inicio"
-      request_repair: "Llamado"
-      repair: "Reparar"
+      equipment: "Equipos"
+      request_repair: "Llamados"
+      repair: "Repararcion"
       repaired: "Reparados"
     main:
       title: "Inicio"
@@ -107,6 +108,21 @@ es:
     back: "Volver"
     update: "Actualizar"
 
+  request_repair:
+    show:
+      title: "Listando Llamados"
+      break: "Descompuestos"
+      repaired: "Reparados"
+      new: "Nueva"
+      repair: "Reparar"
+
+  equipment:
+    show:
+      title: "Listando Equipos"
+      take_out: "Dar de baja"
+
+  repair:
+    title: "Repair"
 
 
 

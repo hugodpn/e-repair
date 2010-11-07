@@ -29,6 +29,7 @@ ul#intro li#more{margin-right:0;background: #7D63A9}
 ul#intro p,ul#intro h3{margin:0;padding: 0 10px}
 ul#intro h3{text-transform:uppercase;padding-bottom:3px;color: #FFF}
 
+div#content h1{margin: 10px 0;color: #007BC4}
 div#content h2{margin: 10px 0;color: #007BC4}
 div.date{float:left;width: 4em;padding: 5px 0;background: #F1DDC4;color:#B0001E;
     text-align:center;margin: 0 4px 4px 0;font-size: 80%;line-height:0.9}

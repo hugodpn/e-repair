@@ -1,35 +1,37 @@
-<h1>Listing equipment miscellaneous</h1>
+<h1><%= t("equipment.show.title") %></h1>
+
+<p>
+  <%= link_to t('general.new'), new_admin_equipment_miscellaneou_path %>
+</p>
 
 <table class="normal_table">
   <tr>
     <th>Type</th>
     <th>Brand</th>
     <th>Model</th>
-    <th># Serial</th>
     <th># Inventory</th>
     <th>Location</th>
     <th>Department</th>
   </tr>
 
-<% @equipment_miscellaneous.each do |equipment_miscellaneou| %>
-  <tr>
-    <td><%=h equipment_miscellaneou.equipment_type.name %></td>
-    <td><%=h equipment_miscellaneou.brand %></td>
-    <td><%=h equipment_miscellaneou.model %></td>
-    <td><%=h equipment_miscellaneou.serial_number %></td>
-    <td><%=h equipment_miscellaneou.inventory_number %></td>
-    <td><%=h equipment_miscellaneou.equipment_location.name %></td>
-    <td><%=h equipment_miscellaneou.department.name %></td>
-    <td><%= link_to 'Show', [:admin, equipment_miscellaneou] %></td>
-    <td><%= link_to 'Edit', edit_admin_equipment_miscellaneou_path(equipment_miscellaneou) %></td>
-    <td><%= link_to 'Take out', "/admin/equipment_miscellaneous/take_out/#{equipment_miscellaneou.id}"  %></td>
-    <!--
-    <td><%#= link_to 'Destroy', [:admin, equipment_miscellaneou], :confirm => 'Are you sure?', :method => :delete %></td>
-    -->
-  </tr>
-<% end %>
+  <% @equipment_miscellaneous.each do |equipment_miscellaneou| %>
+    <tr>
+      <td><%=h equipment_miscellaneou.equipment_type.name %></td>
+      <td><%=h equipment_miscellaneou.brand %></td>
+      <td><%=h equipment_miscellaneou.model %></td>
+      <td><%=h equipment_miscellaneou.inventory_number %></td>
+      <td><%=h equipment_miscellaneou.equipment_location.name %></td>
+      <td><%=h equipment_miscellaneou.department.name %></td>
+      <td><%= link_to image_tag("icons/show.png", :size => "24x24"), [:admin, equipment_miscellaneou], :title => t('general.show') %></td>
+      <td><%= link_to image_tag("icons/edit.png", :size => "24x24"), edit_admin_equipment_miscellaneou_path(equipment_miscellaneou), :title => t('general.edit') %></td>
+      <td><%= link_to image_tag("icons/clean.png", :size => "24x24"), "/admin/equipment_miscellaneous/take_out/#{equipment_miscellaneou.id}", :title => t('equipment.show.take_out')  %></td>
+      <!--
+      <td><%#= link_to 'Destroy', [:admin, equipment_miscellaneou], :confirm => 'Are you sure?', :method => :delete %></td>
+      -->
+    </tr>
+  <% end %>
 </table>
 <%= will_paginate @equipment_miscellaneous %>
 <br />
 
-<%= link_to 'New equipment miscellaneou', new_admin_equipment_miscellaneou_path %>
+<%= link_to t('general.new'), new_admin_equipment_miscellaneou_path %>

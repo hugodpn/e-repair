@@ -11,6 +11,7 @@ en:
     home:
       title: "Home"
       main: "Main"
+      equipment: "Equipments"
       request_repair: "Rquest Repair"
       repair: "Repair"
       repaired: "Repaired"
@@ -103,3 +104,19 @@ en:
     confirmation: "Are you sure?"
     back: "Back"
     update: "Update"
+
+  request_repair:
+    show:
+      title: "Listing Request Repair"
+      break: "Break"
+      repaired: "Repaired"
+      new: "New"
+      repair: "Repair"
+
+  equipment:
+    show:
+      title: "Listing Equipments"
+      take_out: "Take Out"
+
+  repair:
+    title: "Repair"

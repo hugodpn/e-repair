@@ -2,7 +2,7 @@
 module ApplicationHelper
 
   def is_config_menu
-    ["departments", "equipment_types", "equipment_locations", "equipment_miscellaneous",
+    ["departments", "equipment_types", "equipment_locations", 
      "reason_faults"].include?(controller.controller_name)
   end
 
@@ -11,7 +11,7 @@ module ApplicationHelper
   end
 
   def is_home_menu
-    ["main", "request_repairs", "repairs"].include?(controller.controller_name)
+    ["equipment_miscellaneous", "main", "request_repairs", "repairs"].include?(controller.controller_name)
   end
 
   def is_report_menu
