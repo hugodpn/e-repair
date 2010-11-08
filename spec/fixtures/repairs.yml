@@ -1,0 +1,79 @@
+# == Schema Information
+# Schema version: 20100506011630
+#
+# Table name: repairs
+#
+#  id                        :integer(4)      not null, primary key
+#  equipment_miscellaneou_id :integer(4)
+#  location                  :string(255)
+#  date_in                   :date
+#  fault_reported            :text
+#  reason_fault_id           :integer(4)
+#  fix                       :text
+#  date_out                  :date
+#  cost                      :float
+#  outsource_cost            :float
+#  observations              :text
+#  request_repair_id         :integer(4)
+#  user_id                   :integer(4)
+#  created_at                :datetime
+#  updated_at                :datetime
+#
+
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  id: 1
+  equipment_miscellaneou_id: 1
+  location: Servicio
+  date_in: 2010-05-05
+  fault_reported: No mide bien
+  reason_fault_id: 1
+  fix: MyText
+  date_out: 2010-05-05
+  cost: 1.5
+  outsource_cost: 1.5
+  observations: Hay que hacerle service con aceite especial
+  user_id: 1
+
+two:
+  id: 2
+  equipment_miscellaneou_id: 2
+  location: Taller
+  date_in: 2010-05-05
+  fault_reported: Reportes erroneos
+  reason_fault_id: 3
+  fix: 
+  date_out: 2010-05-05
+  cost: 1.5
+  outsource_cost: 1.5
+  observations:
+  user_id: 1
+
+three:
+  id: 3
+  equipment_miscellaneou_id: 3
+  location: Service
+  date_in: 2010-05-05
+  fault_reported: No funciona
+  reason_fault_id: 3
+  fix: MyText
+  date_out: 
+  cost: 1.5
+  outsource_cost: 1.5
+  observations:
+  user_id: 2
+
+four:
+  id: 4
+  equipment_miscellaneou_id: 7
+  location: Universidad
+  date_in: 2010-05-05
+  fault_reported: Necesita calibrar
+  reason_fault_id: 4
+  fix: Cambio de cable
+  date_out:
+  cost: 1.5
+  outsource_cost: 1.5
+  observations: Se observa un deterioro pronunciado
+  user_id: 1

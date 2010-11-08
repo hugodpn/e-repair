@@ -1,0 +1,52 @@
+# == Schema Information
+# Schema version: 20100506011630
+#
+# Table name: reason_faults
+#
+#  id         :integer(4)      not null, primary key
+#  name       :string(255)
+#  created_at :datetime
+#  updated_at :datetime
+#
+
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  id: 1
+  name: Mal Uso
+
+two:
+  id: 2
+  name: Desgaste
+
+three:
+  id: 3
+  name: Mala lubricación
+
+four:
+  id: 4
+  name: Problemas en fijaciones
+
+five:
+  id: 5
+  name: Seccionamietno inadecuado
+
+six:
+  id: 6
+  name: Pérdida de flujo por roturas
+
+seven:
+  id: 7
+  name: Carencia de protecciones adecuada
+
+eight:
+  id: 8
+  name: Puesta a tierra inexistente
+
+nine:
+  id: 9
+  name: Puesta a tierra fuera de rango
+
+ten:
+  id: 10
+  name: Control Preventivo

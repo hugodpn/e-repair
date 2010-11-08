@@ -1,0 +1,141 @@
+# == Schema Information
+# Schema version: 20100505020302
+#
+# Table name: equipment_miscellaneous
+#
+#  id                    :integer(4)      not null, primary key
+#  equipment_type_id     :integer(4)
+#  brand                 :string(255)
+#  model                 :string(255)
+#  serial_number         :string(255)
+#  inventory_number      :integer(4)
+#  equipment_location_id :integer(4)
+#  department_id         :integer(4)
+#  cost                  :float
+#  observations          :text
+#  created_at            :datetime
+#  updated_at            :datetime
+#
+
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  id: 1
+  equipment_type_id: 6
+  brand: Medix Welghing
+  model: W S-1
+  serial_number: 12313s2123
+  inventory_number: 12
+  equipment_location_id: 1
+  department_id: 1
+  cost: 1288.5
+  observations: Yellow color
+
+two:
+  id: 2
+  equipment_type_id: 5
+  brand: Medix Welghing
+  model: W S-1
+  serial_number: 12313s2123
+  inventory_number: 13
+  equipment_location_id: 1
+  department_id: 1
+  cost: 881.5
+  observations: Yellow color
+
+three:
+  id: 3
+  equipment_type_id: 4
+  brand: M- Volumed
+  model: UVP 2001
+  serial_number: 122ssw
+  inventory_number: 22
+  equipment_location_id: 1
+  department_id: 1
+  cost: 1883.5
+  observations: 
+
+four:
+  id: 4
+  equipment_type_id: 3
+  brand: Datas Cope
+  model: 15 D4 DL 02
+  serial_number: P510635-C9
+  inventory_number: 14
+  equipment_location_id: 2
+  department_id: 2
+  cost: 12246
+  observations: 1990
+
+five:
+  id: 5
+  equipment_type_id: 1
+  brand: White Martins
+  model: F97
+  serial_number: 233322211-1
+  inventory_number: 133
+  equipment_location_id: 1
+  department_id: 1
+  cost: 111132.5
+  observations: 
+
+six:
+  id: 6
+  equipment_type_id: 2
+  brand: Presvac
+  model: DCS 16 Rut p/20 tub
+  serial_number: 5509
+  inventory_number: 123
+  equipment_location_id: 1
+  department_id: 1
+  cost: 4421.5
+  observations: MyText
+
+seven:
+  id: 7
+  equipment_type_id: 3
+  brand: Welch Allyn
+  model: 
+  serial_number: 
+  inventory_number: 
+  equipment_location_id: 1
+  department_id: 1
+  cost: 17667.5
+  observations: Without information
+
+eight:
+  id: 8
+  equipment_type_id: 4
+  brand: ILAB
+  model: 300
+  serial_number: e212
+  inventory_number: 2
+  equipment_location_id: 1
+  department_id: 1
+  cost: 19912.5
+  observations: 
+
+nine:
+  id: 9
+  equipment_type_id: 5
+  brand: Weros
+  model: F 29
+  serial_number: 
+  inventory_number: 1
+  equipment_location_id: 1
+  department_id: 1
+  cost: 
+  observations: 
+
+ten:
+  id: 10
+  equipment_type_id: 6
+  brand: Tecme
+  model: Neumovent Graph
+  serial_number: 050910361070A1V
+  inventory_number: 54
+  equipment_location_id: 1
+  department_id: 1
+  cost: 12221.5
+  observations: 
+

@@ -1,0 +1,40 @@
+# == Schema Information
+# Schema version: 20100505020302
+#
+# Table name: equipment_locations
+#
+#  id         :integer(4)      not null, primary key
+#  name       :string(255)
+#  created_at :datetime
+#  updated_at :datetime
+#
+
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  id: 1
+  name: Depósito
+
+two:
+  id: 2
+  name: Taller
+
+three:
+  id: 3
+  name: Universidad
+
+four:
+  id: 4
+  name: Servicio
+
+five:
+  id: 5
+  name: Servicio Comodato
+
+six:
+  id: 6
+  name: Servicio S/Uso
+
+seven:
+  id: 7
+  name: Other
