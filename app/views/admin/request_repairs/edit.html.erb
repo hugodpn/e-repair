@@ -1,32 +1,32 @@
-<h1>Editing request repair</h1>
+<h1><%= t("request_repair.update.title") %></h1>
 
 <% form_for([:admin, @request_repair]) do |f| %>
   <%= f.error_messages %>
 
   <p>
-    <%= f.label :date %><br />
+    <%= f.label t("request_repair.model.date") %><br />
     <%= f.datetime_select :date %>
   </p>
   <p>
-    <%= f.label :department_id %><br />
+    <%= f.label t("request_repair.model.department") %><br />
     <%= f.select("department_id", Department.all.collect {|d| [ d.name, d.id ] }, { :include_blank => false }) %>
   </p>
   <p>
-    <%= f.label :reason %><br />
+    <%= f.label t("request_repair.model.reason") %><br />
     <%= f.text_field :reason %>
   </p>
   <p>
-    <%= f.label :solution %><br />
+    <%= f.label t("request_repair.model.solution") %><br />
     <%= f.text_area :solution, :size => "40x4" %>
   </p>
   <p>
-    <label>Repaired</label><br />
+    <label><%= t("request_repair.model.repair") %></label><br />
     <%= check_box_tag 'repaired', 'true', (@request_repair.repair_id == nil) ? false : true %>
   </p>
   <p>
-    <%= f.submit 'Update' %>
+    <%= f.submit t("general.update") %>
   </p>
 <% end %>
 
-<%= link_to 'Show', [:admin, @request_repair] %> |
-<%= link_to 'Back', admin_request_repairs_path %>
+<%= link_to t("general.show"), [:admin, @request_repair] %> |
+<%= link_to t("general.back"), admin_request_repairs_path %>

@@ -110,12 +110,24 @@ es:
     create: "Crear"
 
   request_repair:
-    show:
+    index:
       title: "Listando Llamados"
       break: "Descompuestos"
       repaired: "Reparados"
-      new: "Nueva"
       repair: "Reparar"
+    create:
+      title: "Nuevo llamado"
+    update:
+      title: "Actualizar llamado"
+    show:
+      title: "Ver llamado"
+    model:
+      date: "Fecha"
+      department: "Departamento"
+      reason: "Razon"
+      user: "Usuario"
+      solution: "Solución"
+      repair: "Reparado"
 
   equipment:
     index:

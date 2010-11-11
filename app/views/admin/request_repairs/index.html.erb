@@ -1,22 +1,22 @@
-<h1><%= t('request_repair.show.title') %></h1>
+<h1><%= t('request_repair.index.title') %></h1>
 
 <p>
-  <%= link_to t('request_repair.show.break'), "/admin/request_repairs" %> -
-  <%= link_to t('request_repair.show.repaired'), "/admin/request_repairs?all=1" %>
+  <%= link_to t('request_repair.index.break'), "/admin/request_repairs" %> -
+  <%= link_to t('request_repair.index.repaired'), "/admin/request_repairs?all=1" %>
 </p>
 
 <p>
-  <%= link_to t('request_repair.show.new'), new_admin_request_repair_path %>
+  <%= link_to t('general.new'), new_admin_request_repair_path %>
 </p>
 
 
 
 <table class="normal_table">
   <tr>
-    <th>Date</th>
-    <th>Department</th>
-    <th>Reason</th>
-    <th>User</th>
+    <th><%= t("request_repair.model.date") %></th>
+    <th><%= t("request_repair.model.department") %></th>
+    <th><%= t("request_repair.model.reason") %></th>
+    <th><%= t("request_repair.model.user") %></th>
   </tr>
 
   <% @request_repairs.each do |request_repair| %>
@@ -28,12 +28,12 @@
       <td><%= link_to image_tag("icons/show.png", :size => "24x24"), [:admin, request_repair], :title => t('general.show') %></td>
       <td><%= link_to image_tag("icons/edit.png", :size => "24x24"), edit_admin_request_repair_path(request_repair), :title => t('general.edit')  %></td>
       <td><%= link_to image_tag("icons/destroy.png", :size => "24x24"), [:admin, request_repair], :confirm => 'Are you sure?', :method => :delete, :title => t('general.destroy')  %></td>
-      <td><%= link_to image_tag("icons/repair.png", :size => "24x24"), '/admin/repairs/new?request=' + request_repair.id.to_s, :title => t('request_repair.show.repair')  %></td>
+      <td><%= link_to image_tag("icons/repair.png", :size => "24x24"), '/admin/repairs/new?request=' + request_repair.id.to_s, :title => t('request_repair.index.repair')  %></td>
     </tr>
   <% end %>
 </table>
 <%= will_paginate @request_repairs unless params[:all].nil? %>
 <br />
 <p>
-  <%= link_to t('request_repair.show.new'), new_admin_request_repair_path %>
+  <%= link_to t('general.new'), new_admin_request_repair_path %>
 </p>

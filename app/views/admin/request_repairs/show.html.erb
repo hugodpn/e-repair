@@ -1,30 +1,30 @@
-<h1>Showing Request Repair</h1>
+<h1><%= t("request_repair.show.title") %></h1>
 
 <p>
-  <b>Date:</b>
+  <b><%= t("request_repair.model.date") %>:</b>
   <%=h @request_repair.date %>
 </p>
 
 <p>
-  <b>Department:</b>
+  <b><%= t("request_repair.model.department") %>:</b>
   <%=h @request_repair.department.name %>
 </p>
 
 <p>
-  <b>Reason:</b>
+  <b><%= t("request_repair.model.reason") %>:</b>
   <%=h @request_repair.reason %>
 </p>
 
 <p>
-  <b>Solution:</b>
+  <b><%= t("request_repair.model.solution") %>:</b>
   <%=h @request_repair.solution %>
 </p>
 
 <p>
-  <b>Repair:</b>
+  <b><%= t("request_repair.model.repair") %>:</b>
   <%=h (@request_repair.repair_id != nil)? "true" : "false" %>
 </p>
 
 
-<%= link_to 'Edit', edit_admin_request_repair_path(@request_repair) %> |
-<%= link_to 'Back', admin_request_repairs_path %>
+<%= link_to t("general.edit"), edit_admin_request_repair_path(@request_repair) %> |
+<%= link_to t("general.back"), admin_request_repairs_path %>

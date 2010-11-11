@@ -1,24 +1,24 @@
-<h1>New request repair</h1>
+<h1><%= t("request_repair.create.title") %></h1>
 
 <% form_for([:admin, @request_repair]) do |f| %>
   <%= f.error_messages %>
 
   <p>
-    <%= f.label :date %><br />
+    <%= f.label t("request_repair.model.date") %><br />
     <%= f.datetime_select :date %>
   </p>
   <p>
-    <%= f.label :department_id %><br />
+    <%= f.label t("request_repair.model.department") %><br />
     <%= f.select("department_id", Department.all.collect {|d| [ d.name, d.id ] }, { :include_blank => false }) %>
   </p>
   <p>
-    <%= f.label :reason %><br />
+    <%= f.label t("request_repair.model.reason") %><br />
     <%= f.text_field :reason %>
     <%= f.hidden_field :user_id, :value => current_user.id %>
   </p>
   <p>
-    <%= f.submit 'Create' %>
+    <%= f.submit t("general.create") %>
   </p>
 <% end %>
 
-<%= link_to 'Back', admin_request_repairs_path %>
+<%= link_to t("general.back"), admin_request_repairs_path %>

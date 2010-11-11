@@ -107,11 +107,23 @@ en:
     create: "Create"
 
   request_repair:
-    show:
+    index:
       title: "Listing Request Repair"
       break: "Break"
       repaired: "Repaired"
-      new: "New"
+      repair: "Repair"
+    create:
+      title: "New Request"
+    update:
+      title: "Update Request"
+    show:
+      title: "Show Request"
+    model:
+      date: "Date"
+      department: "Department"
+      reason: "Reason"
+      user: "User"
+      solution: "Solution"
       repair: "Repair"
 
   equipment:
