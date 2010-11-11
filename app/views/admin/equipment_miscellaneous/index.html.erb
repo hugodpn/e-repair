@@ -1,4 +1,4 @@
-<h1><%= t("equipment.show.title") %></h1>
+<h1><%= t("equipment.index.title") %></h1>
 
 <p>
   <%= link_to t('general.new'), new_admin_equipment_miscellaneou_path %>
@@ -6,12 +6,12 @@
 
 <table class="normal_table">
   <tr>
-    <th>Type</th>
-    <th>Brand</th>
-    <th>Model</th>
-    <th># Inventory</th>
-    <th>Location</th>
-    <th>Department</th>
+    <th><%= t("equipment.model.equipment_type") %></th>
+    <th><%= t("equipment.model.brand") %></th>
+    <th><%= t("equipment.model.model") %></th>
+    <th><%= t("equipment.model.inventory_number") %></th>
+    <th><%= t("equipment.model.equipment_location") %></th>
+    <th><%= t("equipment.model.department") %></th>
   </tr>
 
   <% @equipment_miscellaneous.each do |equipment_miscellaneou| %>
@@ -24,7 +24,7 @@
       <td><%=h equipment_miscellaneou.department.name %></td>
       <td><%= link_to image_tag("icons/show.png", :size => "24x24"), [:admin, equipment_miscellaneou], :title => t('general.show') %></td>
       <td><%= link_to image_tag("icons/edit.png", :size => "24x24"), edit_admin_equipment_miscellaneou_path(equipment_miscellaneou), :title => t('general.edit') %></td>
-      <td><%= link_to image_tag("icons/clean.png", :size => "24x24"), "/admin/equipment_miscellaneous/take_out/#{equipment_miscellaneou.id}", :title => t('equipment.show.take_out')  %></td>
+      <td><%= link_to image_tag("icons/clean.png", :size => "24x24"), "/admin/equipment_miscellaneous/take_out/#{equipment_miscellaneou.id}", :title => t("equipment.index.take_out")  %></td>
       <!--
       <td><%#= link_to 'Destroy', [:admin, equipment_miscellaneou], :confirm => 'Are you sure?', :method => :delete %></td>
       -->

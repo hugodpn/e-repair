@@ -104,6 +104,7 @@ en:
     confirmation: "Are you sure?"
     back: "Back"
     update: "Update"
+    create: "Create"
 
   request_repair:
     show:
@@ -114,9 +115,25 @@ en:
       repair: "Repair"
 
   equipment:
-    show:
+    index:
       title: "Listing Equipments"
       take_out: "Take Out"
+    create:
+      title: "Create equipment"
+    update:
+      title: "Update equipment"
+    show:
+      title: "Show equipment"
+    model:
+      equipment_type: "Equipment Type"
+      brand: "Brand"
+      model: "Model"
+      serial_number: "Serial Number"
+      inventory_number: "Inventory Number"
+      equipment_location: "Location"
+      department: "Department"
+      cost: "Cost"
+      observations: "Observations"
 
   repair:
     title: "Repair"

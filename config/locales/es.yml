@@ -107,6 +107,7 @@ es:
     confirmation: "¿Está seguro?"
     back: "Volver"
     update: "Actualizar"
+    create: "Crear"
 
   request_repair:
     show:
@@ -117,9 +118,25 @@ es:
       repair: "Reparar"
 
   equipment:
-    show:
+    index:
       title: "Listando Equipos"
       take_out: "Dar de baja"
+    create:
+      title: "Agregar equipo"
+    update:
+      title: "Actualizar equipo"
+    show:
+      title: "Ver equipo"
+    model:
+      equipment_type: "Tipo de Equipo"
+      brand: "Marca"
+      model: "Modelo"
+      serial_number: "# Serie"
+      inventory_number: "# Inventario"
+      equipment_location: "Ubicación"
+      department: "Departamento"
+      cost: "Costo"
+      observations: "Observaciones"
 
   repair:
     title: "Repair"
