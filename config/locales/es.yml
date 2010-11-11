@@ -129,6 +129,28 @@ es:
       solution: "Solución"
       repair: "Reparado"
 
+  repair:
+    index:
+      title: "Listando Reparaciones"
+    create:
+      title: "Nueva reparación"
+      request_repair: "Solicitado por"
+    update:
+      title: "Actualizar reparación"
+    show:
+      title: "Ver reparación"
+    model:
+      equipment_miscellaneou: "Equipo"
+      location: "Ubicación"
+      date_in: "Fecha ingreso"
+      fault_reported: "Falla reportada"
+      reason_fault: "Razon de la falla"
+      fix: "Reparación"
+      date_out: "Fecha de Salida"
+      cost: "Costo"
+      outsource_cost: "Costo de tercerizar"
+      observations: "Observaciones"
+
   equipment:
     index:
       title: "Listando Equipos"
@@ -149,11 +171,6 @@ es:
       department: "Departamento"
       cost: "Costo"
       observations: "Observaciones"
-
-  repair:
-    title: "Repair"
-
-
 
   authlogic:
     error_messages:

@@ -148,4 +148,24 @@ en:
       observations: "Observations"
 
   repair:
-    title: "Repair"
+    index:
+      title: "Listing repairs"
+    create:
+      title: "New repair"
+      request_repair: "Solicitado por"
+    update:
+      title: "Update repair"
+    show:
+      title: "Show repair"
+    model:
+      equipment_miscellaneou: "Equipment"
+      location: "Location"
+      date_in: "Date in"
+      fault_reported: "Fault reported"
+      reason_fault: "Reason fault"
+      fix: "Fix"
+      date_out: "Date out"
+      cost: "Cost"
+      outsource_cost: "Outsource cost"
+      observations: "Observations"
+

@@ -1,53 +1,55 @@
+<h1><%= t("repair.show.title") %></h1>
+
 <p>
-  <b>Equipment miscellaneou:</b>
+  <b><%= t("repair.model.equipment_miscellaneou") %>:</b>
   <%=h @repair.equipment_miscellaneou_id %>
 </p>
 
 <p>
-  <b>Location:</b>
+  <b><%= t("repair.model.location") %>:</b>
   <%=h @repair.location %>
 </p>
 
 <p>
-  <b>Date in:</b>
+  <b><%= t("repair.model.date_in") %>:</b>
   <%=h @repair.date_in %>
 </p>
 
 <p>
-  <b>Fault reported:</b>
+  <b><%= t("repair.model.fault_reported") %>:</b>
   <%=h @repair.fault_reported %>
 </p>
 
 <p>
-  <b>Reason fault:</b>
+  <b><%= t("repair.model.reason_fault") %>:</b>
   <%=h @repair.reason_fault_id %>
 </p>
 
 <p>
-  <b>Fix:</b>
+  <b><%= t("repair.model.fix") %>:</b>
   <%=h @repair.fix %>
 </p>
 
 <p>
-  <b>Date out:</b>
+  <b><%= t("repair.model.date_out") %>:</b>
   <%=h @repair.date_out %>
 </p>
 
 <p>
-  <b>Cost:</b>
+  <b><%= t("repair.model.cost") %>:</b>
   <%=h @repair.cost %>
 </p>
 
 <p>
-  <b>Outsource cost:</b>
+  <b><%= t("repair.model.outsource_cost") %>:</b>
   <%=h @repair.outsource_cost %>
 </p>
 
 <p>
-  <b>Observations:</b>
+  <b><%= t("repair.model.observations") %>:</b>
   <%=h @repair.observations %>
 </p>
 
 
-<%= link_to 'Edit', edit_admin_repair_path(@repair) %> |
-<%= link_to 'Back', admin_repairs_path %>
+<%= link_to t("general.update"), edit_admin_repair_path(@repair) %> |
+<%= link_to t("general.back"), admin_repairs_path %>

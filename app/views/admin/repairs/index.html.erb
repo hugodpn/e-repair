@@ -1,32 +1,28 @@
-<h1>Listing repairs</h1>
+<h1><%= t("repair.index.title") %></h1>
 
 <table class="normal_table">
   <tr>
-    <th>Date in</th>
-    <th>Equipment</th>
-    <th>Department</th>
-    <th>Location</th>
-    <th>Fault reported</th>
-    <th>Reason fault</th>
-    <th>Date out</th>
-    <th>User</th>
+    <th><%= t("repair.model.date_in") %></th>
+    <th><%= t("repair.model.equipment_miscellaneou") %></th>
+    <th><%= t("equipment.model.department") %></th>
+    <th><%= t("repair.model.location") %></th>
+    <th><%= t("repair.model.fault_reported") %></th>
+    <th><%= t("repair.model.reason_fault") %></th>
   </tr>
 
-<% @repairs.each do |repair| %>
-  <tr>
-    <td><%=h repair.date_in %></td>
-    <td><%=h repair.equipment_miscellaneou.equipment_type.name %></td>
-    <td><%=h repair.equipment_miscellaneou.department.name %></td>
-    <td><%=h repair.location %></td>
-    <td><%=h repair.fault_reported %></td>
-    <td><%=h repair.reason_fault.name %></td>
-    <td><%=h repair.date_out %></td>
-    <td><%=h repair.user.login %></td>
-    <td><%= link_to 'Show', [:admin, repair] %></td>
-    <td><%= link_to 'Edit', edit_admin_repair_path(repair) %></td>
-    <td><%= link_to 'Destroy', [:admin, repair], :confirm => 'Are you sure?', :method => :delete %></td>
-  </tr>
-<% end %>
+  <% @repairs.each do |repair| %>
+    <tr>
+      <td><%=h repair.date_in %></td>
+      <td><%=h repair.equipment_miscellaneou.equipment_type.name %></td>
+      <td><%=h repair.equipment_miscellaneou.department.name %></td>
+      <td><%=h repair.location %></td>
+      <td><%=h repair.fault_reported %></td>
+      <td><%=h repair.reason_fault.name %></td>
+      <td><%= link_to image_tag("icons/show.png", :size => "24x24"), [:admin, repair], :title => t('general.show') %></td>
+      <td><%= link_to image_tag("icons/edit.png", :size => "24x24"), edit_admin_repair_path(repair), :title => t('general.edit')  %></td>
+      <td><%= link_to image_tag("icons/destroy.png", :size => "24x24"), [:admin, repair], :confirm => t("general.confirmation"), :method => :delete, :title => t('general.destroy')  %></td>
+    </tr>
+  <% end %>
 </table>
 
 <%= will_paginate @request_repairs %>
