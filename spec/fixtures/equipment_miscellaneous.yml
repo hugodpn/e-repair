@@ -139,3 +139,14 @@ ten:
   cost: 12221.5
   observations: 
 
+eleven:
+  id: 11
+  equipment_type_id: 6
+  brand:
+  model:
+  serial_number:
+  inventory_number:
+  equipment_location_id: 1
+  department_id: 1
+  cost: 
+  observations:

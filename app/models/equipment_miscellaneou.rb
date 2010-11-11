@@ -23,6 +23,9 @@ class EquipmentMiscellaneou < ActiveRecord::Base
   belongs_to :department
   has_many :repairs
 
+  validates_presence_of :brand, :inventory_number
+  validates_numericality_of :inventory_number
+
   cattr_reader :per_page
   @@per_page = 20
   
