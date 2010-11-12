@@ -64,6 +64,10 @@ en:
       is_admin: "Is admin?"
       created: "Created"
       updated: "Updated"
+      first_name: "First name"
+      last_name: "Last name"
+      phone: "Phone"
+      address: "Address"
 
   articles:
     listing_articles: "Listing Articles"

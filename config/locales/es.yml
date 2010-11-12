@@ -66,6 +66,10 @@ es:
       is_admin: "Is admin?"
       created: "Creado"
       updated: "Actualizado"
+      first_name: "Nombre"
+      last_name: "Apellido"
+      phone: "Teléfono"
+      address: "Dirección"
 
   articles:
     listing_articles: "Listando Artículos"
