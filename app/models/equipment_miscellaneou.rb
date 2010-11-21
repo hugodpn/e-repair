@@ -18,6 +18,9 @@
 #
 
 class EquipmentMiscellaneou < ActiveRecord::Base
+
+  default_scope :conditions => { :take_out_user_id => -1 }
+
   belongs_to :equipment_type
   belongs_to :equipment_location
   belongs_to :department

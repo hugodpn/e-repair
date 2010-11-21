@@ -1,14 +1,14 @@
-<h1>Editing department</h1>
+<h1><%= t('department.update.title') %></h1>
 
 <% form_for([:admin, @department]) do |f| %>
   <%= f.error_messages %>
 
   <p>
-    <%= f.label :name %><br />
+    <%= f.label t('department.model.name') %><br />
     <%= f.text_field :name %>
   </p>
   <p>
-    <%= f.label :alias %><br />
+    <%= f.label t('department.model.alias') %><br />
     <%= f.text_field :alias %>
   </p>
   <p>
@@ -16,5 +16,5 @@
   </p>
 <% end %>
 
-<%= link_to 'Show', [:admin, @department] %> |
-<%= link_to 'Back', admin_departments_path %>
+<%= link_to t('general.show'), [:admin, @department] %> |
+<%= link_to t('general.back'), admin_departments_path %>

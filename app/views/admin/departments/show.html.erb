@@ -1,15 +1,15 @@
-<h1>Showing Department</h1>
+<h1><%= t('department.show.title') %></h1>
 
 <p>
-  <b>Name:</b>
+  <b><%= t('department.model.name') %>:</b>
   <%=h @department.name %>
 </p>
 
 <p>
-  <b>Alias:</b>
+  <b><%= t('department.model.alias') %>:</b>
   <%=h @department.alias %>
 </p>
 
 
-<%= link_to 'Edit', edit_admin_department_path(@department) %> |
-<%= link_to 'Back', admin_departments_path %>
+<%= link_to t('general.edit'), edit_admin_department_path(@department) %> |
+<%= link_to t('general.back'), admin_departments_path %>

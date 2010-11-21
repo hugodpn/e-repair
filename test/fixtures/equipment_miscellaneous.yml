@@ -30,6 +30,9 @@ one:
   department_id: 1
   cost: 1288.5
   observations: Yellow color
+  take_out_reason: nil
+  take_out_user_id: -1
+
 
 two:
   id: 2
@@ -42,6 +45,8 @@ two:
   department_id: 1
   cost: 881.5
   observations: Yellow color
+  take_out_reason: nil
+  take_out_user_id: -1
 
 three:
   id: 3
@@ -53,7 +58,9 @@ three:
   equipment_location_id: 1
   department_id: 1
   cost: 1883.5
-  observations: 
+  observations:
+  take_out_reason: nil
+  take_out_user_id: -1
 
 four:
   id: 4
@@ -66,6 +73,8 @@ four:
   department_id: 2
   cost: 12246
   observations: 1990
+  take_out_reason: nil
+  take_out_user_id: -1
 
 five:
   id: 5
@@ -77,7 +86,9 @@ five:
   equipment_location_id: 1
   department_id: 1
   cost: 111132.5
-  observations: 
+  observations:
+  take_out_reason: nil
+  take_out_user_id: -1
 
 six:
   id: 6
@@ -90,6 +101,8 @@ six:
   department_id: 1
   cost: 4421.5
   observations: MyText
+  take_out_reason: nil
+  take_out_user_id: -1
 
 seven:
   id: 7
@@ -102,6 +115,8 @@ seven:
   department_id: 1
   cost: 17667.5
   observations: Without information
+  take_out_reason: nil
+  take_out_user_id: -1
 
 eight:
   id: 8
@@ -113,7 +128,9 @@ eight:
   equipment_location_id: 1
   department_id: 1
   cost: 19912.5
-  observations: 
+  observations:
+  take_out_reason: nil
+  take_out_user_id: -1
 
 nine:
   id: 9
@@ -125,7 +142,9 @@ nine:
   equipment_location_id: 1
   department_id: 1
   cost: 
-  observations: 
+  observations:
+  take_out_reason: nil
+  take_out_user_id: -1
 
 ten:
   id: 10
@@ -137,5 +156,7 @@ ten:
   equipment_location_id: 1
   department_id: 1
   cost: 12221.5
-  observations: 
+  observations:
+  take_out_reason: No funcionaba más
+  take_out_user_id: 2
 

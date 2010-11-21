@@ -16,6 +16,11 @@ es:
       request_repair: "Llamados"
       repair: "Repararcion"
       repaired: "Reparados"
+    config:
+      department: "Departamentos"
+      equipment_type: "Tipos de equipos"
+      equipment_location: "Ubicacion"
+      reason_fault: "Razon de falla"
     main:
       title: "Inicio"
       home: "Inicio"
@@ -175,6 +180,20 @@ es:
       department: "Departamento"
       cost: "Costo"
       observations: "Observaciones"
+
+  department:
+    index:
+      title: "Listando departamentos"
+    create:
+      title: "Agregar departamento"
+    update:
+      title: "Actualizar departamento"
+    show:
+      title: "Ver departamento"
+    model:
+      name: "Nombre"
+      alias: "Alias"
+
 
   authlogic:
     error_messages:

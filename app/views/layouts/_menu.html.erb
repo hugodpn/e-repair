@@ -4,10 +4,10 @@
     <% if current_user && ( current_user.has_perm?("articles_article_can_list") or
           current_user.has_perm?("users_user_can_list") or current_user.has_perm?("roles_role_can_list") ) %>
 
-      <li><%= link_to "Department", admin_departments_path %></li>
-      <li><%= link_to "Equipment Types", admin_equipment_types_path %></li>
-      <li><%= link_to "Equipment Locations", admin_equipment_locations_path %></li>
-      <li><%= link_to "Reason Fault", admin_reason_faults_path %></li>
+      <li><%= link_to t('menu.config.department'), admin_departments_path %></li>
+      <li><%= link_to t('menu.config.equipment_type'), admin_equipment_types_path %></li>
+      <li><%= link_to t('menu.config.equipment_location'), admin_equipment_locations_path %></li>
+      <li><%= link_to t('menu.config.reason_fault'), admin_reason_faults_path %></li>
 
     <% end %>
 

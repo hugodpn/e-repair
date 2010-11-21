@@ -85,10 +85,26 @@ class Admin::EquipmentMiscellaneousController < ApplicationController
 
   def take_out
 
-    @equipment = EquipmentMiscellaneou.find(params[:id])
+    @equipment_miscellaneou = EquipmentMiscellaneou.find(params[:id])
+
+  end
+
+  def take_out_up
+
+    @equipment_miscellaneou = EquipmentMiscellaneou.find(params[:id])
     
-    flash[:notice] = 'Equipment was took out.'
-    redirect_to(admin_equipment_miscellaneous_url)
+    if !params[:take_out_reason].nil? and params[:take_out_reason] != ""
+      @equipment_miscellaneou.take_out_reason = params[:take_out_reason]
+      @equipment_miscellaneou.take_out_user_id = params[:take_out_user_id]
+      @equipment_miscellaneou.save
+      flash[:notice] = 'Equipment was took out.'
+      redirect_to(admin_equipment_miscellaneous_url)
+    else
+      flash[:notice] = 'Can not take out. You should add a reason.'
+      redirect_to(admin_equipment_miscellaneous_url)
+    end
+
+
 
   end
 

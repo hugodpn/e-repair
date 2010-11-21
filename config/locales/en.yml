@@ -18,6 +18,11 @@ en:
     main:
       title: "Main"
       home: "Home"
+    config:
+      department: "Department"
+      equipment_type: "Equipment types"
+      equipment_location: "Equipment location"
+      reason_fault: "Reason fault"
     admin:
       title: "Administrator"
       articles: "Articles"
@@ -150,6 +155,20 @@ en:
       department: "Department"
       cost: "Cost"
       observations: "Observations"
+
+
+  department:
+    index:
+      title: "Listing department"
+    create:
+      title: "Create department"
+    update:
+      title: "Update department"
+    show:
+      title: "Show department"
+    model:
+      name: "Name"
+      alias: "Alias"
 
   repair:
     index:
