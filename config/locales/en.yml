@@ -19,6 +19,7 @@ en:
       title: "Main"
       home: "Home"
     config:
+      title: "Config"
       department: "Department"
       equipment_type: "Equipment types"
       equipment_location: "Equipment location"
@@ -35,6 +36,11 @@ en:
       login: "Log in"
       logout: "Log out"
       register: "Register"
+    help:
+      title: "Help"
+    reports:
+      title: "Reports"
+
 
   access:
     title: "Login"
@@ -169,6 +175,42 @@ en:
     model:
       name: "Name"
       alias: "Alias"
+
+  equipment_type:
+    index:
+      title: "Listing equipment types"
+    create:
+      title: "Create equipment type"
+    update:
+      title: "Update equipment type"
+    show:
+      title: "Show equipment type"
+    model:
+      name: "Name"
+
+  location:
+    index:
+      title: "Listing location"
+    create:
+      title: "Create location"
+    update:
+      title: "Update location"
+    show:
+      title: "Show location"
+    model:
+      name: "Name"
+
+  reason_fault:
+    index:
+      title: "Listing reason fault"
+    create:
+      title: "Create reason fault"
+    update:
+      title: "Update reason fault"
+    show:
+      title: "Show reason fault"
+    model:
+      name: "Name"
 
   repair:
     index:

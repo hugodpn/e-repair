@@ -1,10 +1,10 @@
-<h1>Showing Reason Fault</h1>
+<h1><%= t('reason_fault.show.title') %></h1>
 
 <p>
-  <b>Name:</b>
+  <b><%= t('reason_fault.model.name') %>:</b>
   <%=h @reason_fault.name %>
 </p>
 
 
-<%= link_to 'Edit', edit_admin_reason_fault_path(@reason_fault) %> |
-<%= link_to 'Back', admin_reason_faults_path %>
+<%= link_to t('general.edit'), edit_admin_reason_fault_path(@reason_fault) %> |
+<%= link_to t('general.back'), admin_reason_faults_path %>

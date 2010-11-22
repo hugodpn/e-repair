@@ -1,16 +1,16 @@
-<h1>Editing reason_fault</h1>
+<h1><%= t('reason_fault.update.title') %></h1>
 
 <% form_for([:admin, @reason_fault]) do |f| %>
   <%= f.error_messages %>
 
   <p>
-    <%= f.label :name %><br />
+    <%= f.label t('reason_fault.model.name') %><br />
     <%= f.text_field :name %>
   </p>
   <p>
-    <%= f.submit 'Update' %>
+    <%= f.submit t('general.update') %>
   </p>
 <% end %>
 
-<%= link_to 'Show', [:admin, @reason_fault] %> |
-<%= link_to 'Back', admin_reason_faults_path %>
+<%= link_to t('general.show'), [:admin, @reason_fault] %> |
+<%= link_to t('general.back'), admin_reason_faults_path %>

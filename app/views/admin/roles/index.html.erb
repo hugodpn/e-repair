@@ -8,6 +8,13 @@
       <td><%= link_to t('general.show'), [:admin, role] %></td>
       <td><%= link_to t('general.edit'), '/admin/roles/' + role.id.to_s + '/edit?model=' + Permission::PERMISSIONS.first.first.to_s %></td>
       <td><%= link_to t('general.destroy'), [:admin, role], :confirm => t('general.confirmation'), :method => :delete %></td>
+
+      <td><%= link_to image_tag("icons/show.png", :size => "24x24"), [:admin, role], :title => t('general.show') %></td>
+      <td><%= link_to image_tag("icons/edit.png", :size => "24x24"), '/admin/roles/' + role.id.to_s + '/edit?model=' + Permission::PERMISSIONS.first.first.to_s, :title => t('general.edit') %></td>
+      <td><%= link_to image_tag("icons/destroy.png", :size => "24x24"), [:admin, role], :confirm => t("general.confirmation"), :method => :delete, :title => t('general.destroy')  %></td>
+
+
+
     </tr>
   <% end %>
 </table>

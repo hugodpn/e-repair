@@ -17,6 +17,7 @@ es:
       repair: "Repararcion"
       repaired: "Reparados"
     config:
+      title: "Configuración"
       department: "Departamentos"
       equipment_type: "Tipos de equipos"
       equipment_location: "Ubicacion"
@@ -36,6 +37,10 @@ es:
       login: "Ingresar"
       logout: "Salir"
       register: "Registro"
+    help:
+      title: "Ayuda"
+    reports:
+      title: "Reportes"
 
   access:
     title: "Registro"
@@ -194,7 +199,43 @@ es:
       name: "Nombre"
       alias: "Alias"
 
+  equipment_type:
+    index:
+      title: "Listando tipos de equipos"
+    create:
+      title: "Agregar tipo de equipo"
+    update:
+      title: "Actualizar tipo de equipo"
+    show:
+      title: "Ver tipo de equipo"
+    model:
+      name: "Nombre"
 
+  location:
+    index:
+      title: "Listando ubicaciones"
+    create:
+      title: "Agregar ubicacion"
+    update:
+      title: "Actualizar ubicacion"
+    show:
+      title: "Ver ubicacion"
+    model:
+      name: "Nombre"
+
+  reason_fault:
+    index:
+      title: "Listando razón de fallas"
+    create:
+      title: "Agregar razón de falla"
+    update:
+      title: "Actualizar razón de falla"
+    show:
+      title: "Ver razón de falla"
+    model:
+      name: "Nombre"
+
+      
   authlogic:
     error_messages:
       login_blank: no puede estar en blanco

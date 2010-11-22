@@ -17,9 +17,9 @@
           <%= " #{r.name} " %>
         <% end %>
       </td>
-      <td><%= link_to t('general.show'), [:admin, user] %></td>
-      <td><%= link_to t('general.edit'), edit_admin_user_path(user) %></td>
-      <td><%= link_to t('general.destroy'), [:admin, user], :confirm => t('general.confirmation'), :method => :delete %></td>
+      <td><%= link_to image_tag("icons/show.png", :size => "24x24"), [:admin, user], :title => t('general.show') %></td>
+      <td><%= link_to image_tag("icons/edit.png", :size => "24x24"), edit_admin_user_path(user), :title => t('general.edit') %></td>
+      <td><%= link_to image_tag("icons/destroy.png", :size => "24x24"), [:admin, user], :confirm => t("general.confirmation"), :method => :delete, :title => t('general.destroy')  %></td>
     </tr>
   <% end %>
 </table>

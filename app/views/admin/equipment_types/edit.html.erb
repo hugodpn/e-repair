@@ -1,16 +1,16 @@
-<h1>Editing equipment type</h1>
+<h1><%= t('equipment_type.update.title') %></h1>
 
 <% form_for([:admin, @equipment_type]) do |f| %>
   <%= f.error_messages %>
 
   <p>
-    <%= f.label :name %><br />
+    <%= f.label t('equipment_type.model.name') %><br />
     <%= f.text_field :name %>
   </p>
   <p>
-    <%= f.submit 'Update' %>
+    <%= f.submit t('general.update') %>
   </p>
 <% end %>
 
-<%= link_to 'Show', [:admin, @equipment_type] %> |
-<%= link_to 'Back', admin_equipment_types_path %>
+<%= link_to t('general.show'), [:admin, @equipment_type] %> |
+<%= link_to t('general.back'), admin_equipment_types_path %>

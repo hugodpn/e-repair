@@ -1,20 +1,20 @@
-<h1>Listing reason faults</h1>
+<h1><%= t('reason_fault.index.title') %></h1>
 
 <table class="normal_table">
   <tr>
-    <th>Name</th>
+    <th><%= t('reason_fault.model.name') %></th>
   </tr>
 
-<% @reason_faults.each do |reason_fault| %>
-  <tr>
-    <td><%=h reason_fault.name %></td>
-    <td><%= link_to 'Show', [:admin, reason_fault] %></td>
-    <td><%= link_to 'Edit', edit_admin_reason_fault_path(reason_fault) %></td>
-    <td><%= link_to 'Destroy', [:admin, reason_fault], :confirm => 'Are you sure?', :method => :delete %></td>
-  </tr>
-<% end %>
+  <% @reason_faults.each do |reason_fault| %>
+    <tr>
+      <td><%=h reason_fault.name %></td>
+      <td><%= link_to image_tag("icons/show.png", :size => "24x24"), [:admin, reason_fault], :title => t('general.show') %></td>
+      <td><%= link_to image_tag("icons/edit.png", :size => "24x24"), edit_admin_reason_fault_path(reason_fault), :title => t('general.edit') %></td>
+      <td><%= link_to image_tag("icons/destroy.png", :size => "24x24"), [:admin, reason_fault], :confirm => t("general.confirmation"), :method => :delete, :title => t('general.destroy')  %></td>
+    </tr>
+  <% end %>
 </table>
 
 <br />
 
-<%= link_to 'New reason fault', new_admin_reason_fault_path %>
+<%= link_to t('general.new'), new_admin_reason_fault_path %>
