@@ -8,8 +8,8 @@ class CreateRepairs < ActiveRecord::Migration
       t.integer :reason_fault_id
       t.text :fix
       t.date :date_out
-      t.float :cost
-      t.float :outsource_cost
+      t.float :cost, :default => 0-0
+      t.float :outsource_cost, :default => 0-0
       t.text :observations
       t.integer :request_repair_id
       t.integer :user_id

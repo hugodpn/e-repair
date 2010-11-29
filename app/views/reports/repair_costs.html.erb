@@ -1,0 +1,55 @@
+<h1>Repairs Cost</h1>
+
+
+<% form_tag(:controller => "reports", :action => "repair_costs") do %>
+  <table>
+    <tr>
+      <td>Desde:</td>
+      <td><%= calendar_date_select_tag "date_from", params[:date_from] %></td>
+    </tr>
+    <tr>
+      <td>Hasta:</td>
+      <td><%= calendar_date_select_tag "date_to", params[:date_to] %></td>
+    </tr>
+    <tr>
+      <td>Formato:</td>
+      <td>HTML: <%= radio_button_tag "report_format", "html", true %>  - CSV: <%= radio_button_tag "report_format", "csv", false %></td>
+    </tr>
+  </table> <br />
+
+  <%= submit_tag "Buscar" %>
+<% end %>
+<br />
+<br />
+
+<% if not @repairs.nil? %>
+  <table class="normal_table">
+    <tr>
+      <th>Fecha Ingreso</th>
+      <th>Fecha Salida</th>
+      <th>Equipo</th>
+      <th>Nro. Inventario</th>
+      <th>Costo</th>
+      <th>Costo tercerización</th>
+      <th>Total x Equipo</th>
+    </tr>
+    <% @repairs.each do |repair| %>
+      <tr>
+        <td><%= repair.date_in %></td>
+        <td><%= repair.date_out %></td>
+        <td><%= repair.equipment_miscellaneou.brand %></td>
+        <td><%= repair.equipment_miscellaneou.inventory_number %></td>
+        <td><%= repair.cost %></td>
+        <td><%= repair.outsource_cost %></td>
+        <td><%= repair.outsource_cost + repair.cost %></td>
+      </tr>
+    <% end %>
+    <tr><td colspan="7">&nbsp;</td></tr>
+    <tr>
+      <td colspan="4">TOTAL:</td>
+      <td><%= @costs %></td>
+      <td><%= @outsource_costs %></td>
+      <td><%= @costs + @outsource_costs %></td>
+    </tr>
+  </table>
+<% end %>

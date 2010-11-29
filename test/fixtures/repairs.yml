@@ -26,13 +26,13 @@ one:
   id: 1
   equipment_miscellaneou_id: 1
   location: Servicio
-  date_in: 2010-05-05
+  date_in: 2010-11-12
   fault_reported: No mide bien
   reason_fault_id: 1
   fix: MyText
-  date_out: 2010-05-05
-  cost: 1.5
-  outsource_cost: 1.5
+  date_out: 2010-11-28
+  cost: 350.5
+  outsource_cost: 0.0
   observations: Hay que hacerle service con aceite especial
   user_id: 1
 
@@ -40,13 +40,13 @@ two:
   id: 2
   equipment_miscellaneou_id: 2
   location: Taller
-  date_in: 2010-05-05
+  date_in: 2010-11-24
   fault_reported: Reportes erroneos
   reason_fault_id: 3
   fix: 
-  date_out: 2010-05-05
-  cost: 1.5
-  outsource_cost: 1.5
+  date_out: 2010-11-27
+  cost: 0.0
+  outsource_cost: 600
   observations:
   user_id: 1
 
@@ -54,13 +54,13 @@ three:
   id: 3
   equipment_miscellaneou_id: 3
   location: Service
-  date_in: 2010-05-05
+  date_in: 2010-11-27
   fault_reported: No funciona
   reason_fault_id: 3
   fix: MyText
   date_out: 
-  cost: 1.5
-  outsource_cost: 1.5
+  cost: 32.0
+  outsource_cost: 0.0
   observations:
   user_id: 2
 
@@ -68,12 +68,12 @@ four:
   id: 4
   equipment_miscellaneou_id: 7
   location: Universidad
-  date_in: 2010-05-05
+  date_in: 2010-11-23
   fault_reported: Necesita calibrar
   reason_fault_id: 4
   fix: Cambio de cable
   date_out:
-  cost: 1.5
-  outsource_cost: 1.5
+  cost: 0.0
+  outsource_cost: 0-0
   observations: Se observa un deterioro pronunciado
   user_id: 1

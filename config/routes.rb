@@ -5,7 +5,6 @@ ActionController::Routing::Routes.draw do |map|
 
   map.resources :user_sessions
   map.resources :users
-  map.resources :reports
   map.resources :helps
 
   map.namespace :admin do |admin|
@@ -22,6 +21,8 @@ ActionController::Routing::Routes.draw do |map|
     admin.resources :repairs
   end
 
+  map.purchase 'reports/index', :controller => 'reports', :action => 'index'
+  map.purchase 'reports/repair_costs', :controller => 'reports', :action => 'repair_costs'
 
   # The priority is based upon order of creation: first created -> highest priority.
 
