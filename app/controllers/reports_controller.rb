@@ -164,4 +164,53 @@ class ReportsController < ApplicationController
 
   end
 
+  def pending_repairs
+    if !params[:date_from].nil? && params[:date_from] != "" && !params[:date_to].nil? && params[:date_to] != ""
+
+      @date_from = Date.parse(params[:date_from])
+      @date_to = Date.parse(params[:date_to])
+
+      @repairs = Repair.find(:all, :conditions => ["date_in > '#{(@date_from - 1.day).to_s}' and date_in < '#{(@date_to + 1.day).to_s}' and date_out is null"])
+
+      if(params[:report_format] == "csv")
+
+
+        csv_string = FasterCSV.generate do |csv|
+          # header row
+
+          csv << ["Fecha", Date.today]
+          csv << ["Desde", @date_from]
+          csv << ["Hasta", @date_to]
+
+          csv << ["Fecha Ingreso", "Departamento", "Razon", "Equipo", "Nro. Inventario", "Total x Equipo"]
+
+          # data rows
+          @repairs.each do |r|
+            csv << [r.date_in,  r.equipment_miscellaneou.department.name, r.reason_fault.name,
+                     r.equipment_miscellaneou.brand, r.equipment_miscellaneou.inventory_number,
+                     r.outsource_cost + r.cost]
+          end
+        end
+
+        # send it to the browsah
+        send_data csv_string,
+          :type => 'text/csv; charset=iso-8859-1; header=present',
+          :disposition => "attachment; filename=cost_repairs_#{Time.now.to_date.to_s}.csv"
+
+      end
+
+
+
+
+
+
+         
+
+
+
+    else
+      @repairs = nil
+    end
+  end
+
 end
