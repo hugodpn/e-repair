@@ -1,0 +1,48 @@
+<h1>Reparaciones por Departamento</h1>
+
+
+<% form_tag(:controller => "reports", :action => "repairs_by_department") do %>
+  <table>
+    <tr>
+      <td>Departamento:</td>
+      <td><%= select(nil, "department_id", Department.all.collect {|d| [ d.name, d.id ] }, { :include_blank => false }) %></td>
+    </tr>
+    <tr>
+      <td>Formato:</td>
+      <td>HTML: <%= radio_button_tag "report_format", "html", true %>  - CSV: <%= radio_button_tag "report_format", "csv", false %></td>
+    </tr>
+  </table> <br />
+
+  <%= submit_tag "Buscar" %>
+<% end %>
+<br />
+<br />
+
+<% if not @repairs.nil? %>
+
+  Fecha: <b><%= Date.today %></b><br /><br />
+
+  <table class="normal_table">
+    <tr>
+      <th>Fecha Ingreso</th>
+      <th>Departamento</th>
+      <th>Razon</th>
+      <th>Equipo</th>
+      <th>Modelo</th>
+      <th>Nro. Inventario</th>
+      <th>Total x Equipo</th>
+    </tr>
+    <% @repairs.each do |repair| %>
+      <tr>
+        <td><%= repair.date_in %></td>
+        <td><%= repair.equipment_miscellaneou.department.name %></td>
+        <td><%= repair.reason_fault.name %></td>
+        <td><%= repair.equipment_miscellaneou.brand %></td>
+        <td><%=h repair.equipment_miscellaneou.model %></td>
+        <td><%= repair.equipment_miscellaneou.inventory_number %></td>
+        <td><%= repair.outsource_cost + repair.cost %></td>
+      </tr>
+    <% end %>
+
+  </table>
+<% end %>
