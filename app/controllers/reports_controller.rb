@@ -11,7 +11,7 @@ class ReportsController < ApplicationController
       @date_from = Date.parse(params[:date_from])
       @date_to = Date.parse(params[:date_to])
 
-      @repairs = Repair.find(:all, :conditions => ["date_in >= '#{@date_from.to_s}' and date_in <= '#{@date_to.to_s}'"])
+      @repairs = Repair.find(:all, :conditions => ["date_in > '#{(@date_from - 1.day).to_s}' and date_in < '#{(@date_to + 1.day).to_s}'"])
 
       @costs = 0
       @outsource_costs = 0
@@ -80,6 +80,46 @@ class ReportsController < ApplicationController
 
     end
 
+  end
+
+  
+  def request_repairs
+    
+    if !params[:date_from].nil? && params[:date_from] != "" && !params[:date_to].nil? && params[:date_to] != ""
+
+      @date_from = Date.parse(params[:date_from]) 
+      @date_to = Date.parse(params[:date_to]) 
+
+      @request_repairs = RequestRepair.find(:all, :conditions => ["date > '#{(@date_from - 1.day).to_s}' and date < '#{(@date_to + 1.day).to_s}'"])
+
+      if(params[:report_format] == "csv")
+
+
+        csv_string = FasterCSV.generate do |csv|
+          # header row
+
+          csv << ["Fecha", Date.today]
+          csv << ["Desde", @date_from]
+          csv << ["Hasta", @date_to]
+          
+          csv << ["Fecha", "Departamento", "Razón", "Solución", "Genero reparación"]
+
+          # data rows
+          @request_repairs.each do |r|
+            csv << [r.date, r.department.name, r.reason, r.solution, (r.repair_id == -1) ? "YES" : "NO"]
+          end
+        end
+
+        # send it to the browsah
+        send_data csv_string,
+          :type => 'text/csv; charset=iso-8859-1; header=present',
+          :disposition => "attachment; filename=cost_repairs_#{Time.now.to_date.to_s}.csv"
+
+      end
+      
+    else
+      @request_repairs = nil
+    end
 
   end
 

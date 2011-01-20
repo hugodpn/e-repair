@@ -1,0 +1,49 @@
+<h1>Llamadas Atendidas</h1>
+
+
+<% form_tag(:controller => "reports", :action => "request_repairs") do %>
+  <table>
+    <tr>
+      <td>Desde:</td>
+      <td><%= calendar_date_select_tag "date_from", params[:date_from] %></td>
+    </tr>
+    <tr>
+      <td>Hasta:</td>
+      <td><%= calendar_date_select_tag "date_to", params[:date_to] %></td>
+    </tr>
+    <tr>
+      <td>Formato:</td>
+      <td>HTML: <%= radio_button_tag "report_format", "html", true %>  - CSV: <%= radio_button_tag "report_format", "csv", false %></td>
+    </tr>
+  </table> <br />
+
+  <%= submit_tag "Buscar" %>
+<% end %>
+<br />
+<br />
+
+<% if not @request_repairs.nil? %>
+
+  Fecha: <b><%= Date.today %></b><br /><br />
+  Desde: <b><%= @date_from %></b><br />
+  Hasta: <b><%= @date_to %></b><br /><br />
+
+  <table class="normal_table">
+    <tr>
+      <th>Fecha</th>
+      <th>Departamento</th>
+      <th>Razon</th>
+      <th>Solucion</th>
+      <th>Genero reparación</th>
+    </tr>
+    <% @request_repairs.each do |repair| %>
+      <tr>
+        <td><%= repair.date %></td>
+        <td><%= repair.department.name %></td>
+        <td><%= repair.reason %></td>
+        <td><%= repair.solution %></td>
+        <td><%= (repair.repair_id == -1) ? "YES" : "NO" %></td>
+      </tr>
+    <% end %>
+  </table>
+<% end %>
