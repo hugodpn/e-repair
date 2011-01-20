@@ -199,18 +199,47 @@ class ReportsController < ApplicationController
 
       end
 
+    else
+      @repairs = nil
+    end
+  end
 
 
+  def repairs_by_equipment
+
+    if !params[:equipment_id].nil? && params[:equipment_id] != ""
+
+      @repairs = Repair.find(:all, :conditions => ["equipment_miscellaneou_id = #{params[:equipment_id]} and date_out is not null"])
+
+      if(params[:report_format] == "csv")
 
 
+        csv_string = FasterCSV.generate do |csv|
+          # header row
 
-         
+          csv << ["Fecha", Date.today]
 
+          csv << ["Fecha Ingreso", "Departamento", "Razon", "Equipo", "Modelo", "Nro. Inventario", "Total x Equipo"]
 
+          # data rows
+          @repairs.each do |r|
+            csv << [r.date_in,  r.equipment_miscellaneou.department.name, r.reason_fault.name,
+                     r.equipment_miscellaneou.brand, r.equipment_miscellaneou.model, r.equipment_miscellaneou.inventory_number,
+                     r.outsource_cost + r.cost]
+          end
+        end
+
+        # send it to the browsah
+        send_data csv_string,
+          :type => 'text/csv; charset=iso-8859-1; header=present',
+          :disposition => "attachment; filename=cost_repairs_#{Time.now.to_date.to_s}.csv"
+
+      end
 
     else
       @repairs = nil
     end
+
   end
 
 end
