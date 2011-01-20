@@ -23,6 +23,7 @@ ActionController::Routing::Routes.draw do |map|
 
   map.purchase 'reports/index', :controller => 'reports', :action => 'index'
   map.purchase 'reports/repair_costs', :controller => 'reports', :action => 'repair_costs'
+  map.purchase 'reports/repair_costs', :controller => 'reports', :action => 'take_out'
 
   # The priority is based upon order of creation: first created -> highest priority.
 

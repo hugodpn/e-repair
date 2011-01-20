@@ -2,7 +2,7 @@ class Admin::EquipmentMiscellaneousController < ApplicationController
   # GET /equipment_miscellaneous
   # GET /equipment_miscellaneous.xml
   def index
-    @equipment_miscellaneous = EquipmentMiscellaneou.paginate :page => params[:page]
+    @equipment_miscellaneous = EquipmentMiscellaneou.take_in.paginate :page => params[:page]
 
     respond_to do |format|
       format.html # index.html.erb

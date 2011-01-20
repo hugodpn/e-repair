@@ -49,5 +49,10 @@ class ReportsController < ApplicationController
     end
 
   end
-  
+
+
+  def take_out
+    @equipments = EquipmentMiscellaneou.take_out
+  end
+
 end

@@ -1,0 +1,20 @@
+<h1>Equipos dados de baja</h1>
+
+<table class="normal_table">
+  <tr>
+    <th>Marca</th>
+    <th>Modelo</th>
+    <th>Nro. Inventario</th>
+    <th>Motivo</th>
+    <th>Usuario</th>
+  </tr>
+  <% @equipments.each do |e| %>
+    <tr>
+      <td><%= e.brand %></td>
+      <td><%= e.model %></td>
+      <td><%= e.inventory_number %></td>
+      <td><%= e.take_out_reason %></td>
+      <td><%= e.take_out_user_id %></td>
+    </tr>
+  <% end %>
+</table>

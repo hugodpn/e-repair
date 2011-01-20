@@ -11,8 +11,8 @@
 #  reason_fault_id           :integer(4)
 #  fix                       :text
 #  date_out                  :date
-#  cost                      :float
-#  outsource_cost            :float
+#  cost                      :float           default(0.0)
+#  outsource_cost            :float           default(0.0)
 #  observations              :text
 #  request_repair_id         :integer(4)
 #  user_id                   :integer(4)

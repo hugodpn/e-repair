@@ -1,5 +1,5 @@
 # == Schema Information
-# Schema version: 20100505020302
+# Schema version: 20100506011630
 #
 # Table name: equipment_miscellaneous
 #
@@ -13,6 +13,8 @@
 #  department_id         :integer(4)
 #  cost                  :float
 #  observations          :text
+#  take_out_reason       :text
+#  take_out_user_id      :integer(4)      default(-1)
 #  created_at            :datetime
 #  updated_at            :datetime
 #

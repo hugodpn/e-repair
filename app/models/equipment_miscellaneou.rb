@@ -1,5 +1,5 @@
 # == Schema Information
-# Schema version: 20100505020302
+# Schema version: 20100506011630
 #
 # Table name: equipment_miscellaneous
 #
@@ -13,13 +13,16 @@
 #  department_id         :integer(4)
 #  cost                  :float
 #  observations          :text
+#  take_out_reason       :text
+#  take_out_user_id      :integer(4)      default(-1)
 #  created_at            :datetime
 #  updated_at            :datetime
 #
 
 class EquipmentMiscellaneou < ActiveRecord::Base
 
-  default_scope :conditions => { :take_out_user_id => -1 }
+  named_scope :take_out, :conditions => ["take_out_user_id > 0"]
+  named_scope :take_in, :conditions => ["take_out_user_id = -1"]
 
   belongs_to :equipment_type
   belongs_to :equipment_location
