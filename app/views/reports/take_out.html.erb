@@ -1,5 +1,7 @@
 <h1>Equipos dados de baja</h1>
 
+Fecha: <b><%= Date.today %></b><br /><br />
+
 <table class="normal_table">
   <tr>
     <th>Marca</th>
@@ -7,6 +9,7 @@
     <th>Nro. Inventario</th>
     <th>Motivo</th>
     <th>Usuario</th>
+    <th>Fecha</th>
   </tr>
   <% @equipments.each do |e| %>
     <tr>
@@ -14,7 +17,10 @@
       <td><%= e.model %></td>
       <td><%= e.inventory_number %></td>
       <td><%= e.take_out_reason %></td>
-      <td><%= e.take_out_user_id %></td>
+      <td><%= e.user.login %></td>
+      <td><%= e.updated_at %></td>
     </tr>
   <% end %>
 </table>
+
+<br /><a href="/reports/take_out?report_format=csv">Exportar CSV</a>

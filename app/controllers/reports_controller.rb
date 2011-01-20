@@ -8,10 +8,10 @@ class ReportsController < ApplicationController
 
     if !params[:date_from].nil? && params[:date_from] != "" && !params[:date_to].nil? && params[:date_to] != ""
 
-      date_from = Date.parse(params[:date_from])
-      date_to = Date.parse(params[:date_to])
+      @date_from = Date.parse(params[:date_from])
+      @date_to = Date.parse(params[:date_to])
 
-      @repairs = Repair.find(:all, :conditions => ["date_in >= '#{date_from.to_s}' and date_in <= '#{date_to.to_s}'"])
+      @repairs = Repair.find(:all, :conditions => ["date_in >= '#{@date_from.to_s}' and date_in <= '#{@date_to.to_s}'"])
 
       @costs = 0
       @outsource_costs = 0
@@ -25,8 +25,14 @@ class ReportsController < ApplicationController
 
       if(params[:report_format] == "csv")
 
+
         csv_string = FasterCSV.generate do |csv|
           # header row
+
+          csv << ["Fecha", Date.today]
+          csv << ["Desde", @date_from]
+          csv << ["Hasta", @date_to]
+          
           csv << ["Fecha Ingreso", "Fecha Salida", "Equipo", "Nro. Inventario", "Costo", "Costo tercerización"]
 
           # data rows
@@ -44,7 +50,6 @@ class ReportsController < ApplicationController
       end
       
     else
-      puts "aca"
       @repairs = nil
     end
 
@@ -53,6 +58,29 @@ class ReportsController < ApplicationController
 
   def take_out
     @equipments = EquipmentMiscellaneou.take_out
+
+    if(params[:report_format] == "csv")
+
+      csv_string = FasterCSV.generate do |csv|
+        # header row
+
+        csv << ["Fecha", Date.today]
+        csv << ["Marca", "Modelo", "Nro. Inventario", "Motivo", "Usuario", "Fecha"]
+
+        # data rows
+        @equipments.each do |e|
+          csv << [e.brand,  e.model, e.inventory_number, e.take_out_reason, e.user.login, e.updated_at]
+        end
+      end
+
+      # send it to the browsah
+      send_data csv_string,
+        :type => 'text/csv; charset=iso-8859-1; header=present',
+        :disposition => "attachment; filename=take_out_#{Time.now.to_date.to_s}.csv"
+
+    end
+
+
   end
 
 end

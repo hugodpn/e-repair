@@ -28,6 +28,7 @@ class EquipmentMiscellaneou < ActiveRecord::Base
   belongs_to :equipment_location
   belongs_to :department
   has_many :repairs
+  belongs_to :user, :class_name => "User", :foreign_key => "take_out_user_id"
 
   validates_presence_of :brand, :inventory_number
   validates_numericality_of :inventory_number

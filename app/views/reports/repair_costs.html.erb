@@ -23,6 +23,11 @@
 <br />
 
 <% if not @repairs.nil? %>
+
+  Fecha: <b><%= Date.today %></b><br /><br />
+  Desde: <b><%= @date_from %></b><br />
+  Hasta: <b><%= @date_to %></b><br /><br />
+
   <table class="normal_table">
     <tr>
       <th>Fecha Ingreso</th>
