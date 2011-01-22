@@ -42,31 +42,16 @@ Rails::Initializer.run do |config|
   # config.i18n.default_locale = :de
 end
 
-#require 'tls_smtp'
-
-#Configuração para envio de e-mail
 ActionMailer::Base.default_content_type = "text/html"
-#ActionMailer::Base.delivery_method = :smtp
+# To ignore the error comment the following line.
 ActionMailer::Base.raise_delivery_errors = true
-#ActionMailer::Base.smtp_settings = {
-#  :address => "smtp.mail.yahoo.com",
-#  :port => 25,
-#  :domain => "www.dhpn.com.ar",
-#  :user_name => "hugodpn@yahoo.com.ar",
-#  :password => "",
-#  :authentication  => :login
-#}
-
-
-ActionMailer::Base.delivery_method = :smtp
-
-
 ActionMailer::Base.smtp_settings = {
-  :enable_starttls_auto => true,
-  :address => 'smtp.gmail.com',
-  :port => 587,
-  :domain => 'dhpn.com.ar',
-  :authentication => :plain,
-  :user_name => 'hugodpn',
-  :password => ''
-}
+    :tls => true,
+    :address => "smtp.gmail.com",
+    :port => "587",
+    :domain => "your_domain.com",
+    :authentication => :plain,
+    :user_name => "your_gmail_user",
+    :password => "your_gmail_password"
+  }
+
