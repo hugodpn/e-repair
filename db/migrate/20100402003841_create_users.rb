@@ -6,7 +6,7 @@ class CreateUsers < ActiveRecord::Migration
       t.string    :last_name
       t.string    :phone
       t.string    :address
-      t.string    :email,               :null => false
+      t.string    :email,               :null => false, :default => ""
       t.string    :crypted_password,    :null => false
       t.string    :password_salt,       :null => false
       t.string    :persistence_token,   :null => false 

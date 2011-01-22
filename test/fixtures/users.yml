@@ -34,7 +34,7 @@ admin:
   last_name: Root
   phone: 2616426418
   address: Las Camelias 1986, Guaymallén, Mendoza, CP. 5521
-  email: hugodpn@dhpn.com
+  email: hugodpn@gmail.com
   crypted_password: bd428be559a161c11abb50ff8f368151c1273888b16fc2f3f877fdbb8fe14995920b6e6af0023a85fbceef17b7d3a599e9e70f2edb4eafed353d6379326c7d7c
   password_salt: ePydCQpzEH0yYOwEhqP7
   persistence_token: c446d1b9ab0e9c1813cadf22f30f56feb0eddd9fd210a754bc4993e63daf3e0741e811653d64442a0fe0ad90d3d3f60292e4d745b8407ddef7fcc2b02b944da0
@@ -58,7 +58,7 @@ user:
   last_name: Last 1
   phone: 2616426418
   address: Las Camelias 1986, Guaymallén, Mendoza, CP. 5521
-  email: hugodpn@dhpn.com
+  email: hugodpn@yahoo.com.ar
   email: user@dhpn.com
   crypted_password: 60a7cc2d5ab1ccefa3fe507ee9c7eb45ee026ab8402f1a51d9974da86c3e48eb2b3e358fd9450c80f49bd11d9e4653d0c569bf34a202b1896b37a9f9ff41c3ec
   password_salt: po6rx-BfC92LrZWNJeeZ
