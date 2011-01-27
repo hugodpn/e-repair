@@ -4,7 +4,7 @@
     <% if current_user && ( current_user.has_perm?("articles_article_can_list") or
           current_user.has_perm?("users_user_can_list") or current_user.has_perm?("roles_role_can_list") ) %>
 
-      <li><%= link_to t('menu.config.department'), admin_departments_path %></li>
+      <li><%= link_to t('menu.config.department'), admin_departments_path  %></li>
       <li><%= link_to t('menu.config.equipment_type'), admin_equipment_types_path %></li>
       <li><%= link_to t('menu.config.equipment_location'), admin_equipment_locations_path %></li>
       <li><%= link_to t('menu.config.reason_fault'), admin_reason_faults_path %></li>
@@ -25,13 +25,13 @@
   <% end %>
 
   <% if is_report_menu %>
-    <li><%= link_to "Costos en Rep.", "/reports/repair_costs" %></li>
-    <li><%= link_to "Eq. dados de baja", "/reports/take_out" %></li>
-    <li><%= link_to "Llamadas", "/reports/request_repairs" %></li>
-    <li><%= link_to "Reparaciones", "/reports/repairs" %></li>
-    <li><%= link_to "Rep. Pendientes", "/reports/pending_repairs" %></li>
-    <li><%= link_to "Rep. x Equipo", "/reports/repairs_by_equipment" %></li>
-    <li><%= link_to "Rep. x Departamento", "/reports/repairs_by_department" %></li>
+    <li><%= link_to "Costos en Rep.", "/reports/repair_costs" if current_user.has_perm?("reports_reports_can_repair_costs") %></li>
+    <li><%= link_to "Eq. dados de baja", "/reports/take_out" if current_user.has_perm?("reports_reports_can_take_out") %></li>
+    <li><%= link_to "Llamadas", "/reports/request_repairs" if current_user.has_perm?("reports_reports_can_request_repairs") %></li>
+    <li><%= link_to "Reparaciones", "/reports/repairs" if current_user.has_perm?("reports_reports_can_repairs") %></li>
+    <li><%= link_to "Rep. Pendientes", "/reports/pending_repairs" if current_user.has_perm?("reports_reports_can_pending_repairs") %></li>
+    <li><%= link_to "Rep. x Equipo", "/reports/repairs_by_equipment" if current_user.has_perm?("reports_reports_can_repairs_by_equipment") %></li>
+    <li><%= link_to "Rep. x Departamento", "/reports/repairs_by_department" if current_user.has_perm?("reports_reports_can_repairs_by_department") %></li>
     <li><hr /></li>
   <% end %>
 

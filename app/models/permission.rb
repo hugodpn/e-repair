@@ -73,47 +73,11 @@ class Permission < ActiveRecord::Base
         :columns => ["can"],
         :rows => ["list", "show", "update", "create", "destroy"]
       }
-    }, :report_repair_costs => {
-      :report_repair_costs => {
-        :title => "Report repair costs",
+    }, :reports => {
+      :reports => {
+        :title => "Reports",
         :columns => ["can"],
-        :rows => ["show"]
-      }
-    }, :report_take_out => {
-      :report_take_out => {
-        :title => "Report take out",
-        :columns => ["can"],
-        :rows => ["show"]
-      }
-    }, :report_request_repairs => {
-      :report_request_repairs => {
-        :title => "Report request repairs",
-        :columns => ["can"],
-        :rows => ["show"]
-      }
-    }, :report_repairs => {
-      :report_repairs => {
-        :title => "Report repairs",
-        :columns => ["can"],
-        :rows => ["show"]
-      }
-    }, :report_pending_repairs => {
-      :report_pending_repairs => {
-        :title => "Report pending repairs",
-        :columns => ["can"],
-        :rows => ["show"]
-      }
-    }, :report_repairs_by_equipment => {
-      :report_repairs_by_equipment => {
-        :title => "Report repairs by equipment",
-        :columns => ["can"],
-        :rows => ["show"]
-      }
-    }, :report_repairs_by_department => {
-      :report_repairs_by_department => {
-        :title => "Report repairs by department",
-        :columns => ["can"],
-        :rows => ["show"]
+        :rows => ["repair_costs", "take_out", "request_repairs", "repairs", "pending_repairs", "repairs_by_equipment", "repairs_by_department"]
       }
     }, :departments => {
       :departments => {

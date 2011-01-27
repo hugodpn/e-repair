@@ -2,11 +2,15 @@ class Admin::DepartmentsController < ApplicationController
   # GET /departments
   # GET /departments.xml
   def index
-    @departments = Department.all
+    unless current_user.has_perm?("departments_departments_can_list")
+      permission_deny
+    else
+      @departments = Department.all
 
-    respond_to do |format|
-      format.html # index.html.erb
-      format.xml  { render :xml => @departments }
+      respond_to do |format|
+        format.html # index.html.erb
+        format.xml  { render :xml => @departments }
+      end
     end
   end
 

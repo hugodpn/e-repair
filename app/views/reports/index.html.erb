@@ -1,9 +1,34 @@
 <h1>Reportes</h1>
+<ul>
 
-<%= link_to "Costos de reparaciones", "/reports/repair_costs" %><br /><br />
-<%= link_to "Equipos dados de baja", "/reports/take_out" %><br /><br />
-<%= link_to "Llamadas atendidas", "/reports/request_repairs" %><br /><br />
-<%= link_to "Reparaciones finalizadas", "/reports/repairs" %><br /><br />
-<%= link_to "Reparaciones pendientes", "/reports/pending_repairs" %><br /><br />
-<%= link_to "Reparaciones por equipo", "/reports/repairs_by_equipment" %><br /><br />
-<%= link_to "Reparaciones por departamento", "/reports/repairs_by_department" %><br /><br />
+  <% if current_user.has_perm?("reports_reports_can_repair_costs") %>
+    <li><%= link_to "Costos de reparaciones", "/reports/repair_costs"  %></li>
+  <% end %>
+  
+  <% if current_user.has_perm?("reports_reports_can_take_out") %>
+    <li><%= link_to "Equipos dados de baja", "/reports/take_out" %></li>
+  <% end %>
+
+  <% if current_user.has_perm?("reports_reports_can_request_repairs") %>
+    <li><%= link_to "Llamadas atendidas", "/reports/request_repairs" %></li>
+  <% end %>
+
+  <% if current_user.has_perm?("reports_reports_can_repairs") %>
+    <li><%= link_to "Reparaciones finalizadas", "/reports/repairs" %></li>
+  <% end %>
+
+  <% if current_user.has_perm?("reports_reports_can_pending_repairs") %>
+    <li><%= link_to "Reparaciones pendientes", "/reports/pending_repairs" %></li>
+  <% end %>
+
+  <% if current_user.has_perm?("reports_reports_can_repairs_by_equipment") %>
+    <li><%= link_to "Reparaciones por equipo", "/reports/repairs_by_equipment" %></li>
+  <% end %>
+
+  <% if current_user.has_perm?("reports_reports_can_repairs_by_department") %>
+    <li><%= link_to "Reparaciones por departamento", "/reports/repairs_by_department" %></li>
+  <% end %>
+
+</ul>
+
+
