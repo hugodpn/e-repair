@@ -44,5 +44,7 @@
   </p>
 <% end %>
 
-<%= link_to t("general.show"), [:admin, @equipment_miscellaneou] %> |
+<% if current_user.has_perm?("equipment_miscellaneous_equipment_miscellaneous_can_show") %>
+  <%= link_to t("general.show"), [:admin, @equipment_miscellaneou] %> |
+<% end %>
 <%= link_to t("general.back"), admin_equipment_miscellaneous_path %>

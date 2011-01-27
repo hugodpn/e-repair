@@ -1,7 +1,9 @@
 <h1><%= t("equipment.index.title") %></h1>
 
 <p>
-  <%= link_to t('general.new'), new_admin_equipment_miscellaneou_path %>
+  <% if current_user.has_perm?("equipment_miscellaneous_equipment_miscellaneous_can_create") %>
+    <%= link_to t('general.new'), new_admin_equipment_miscellaneou_path %>
+  <% end %>
 </p>
 
 <table class="normal_table">
@@ -22,9 +24,15 @@
       <td><%=h equipment_miscellaneou.inventory_number %></td>
       <td><%=h equipment_miscellaneou.equipment_location.name %></td>
       <td><%=h equipment_miscellaneou.department.name %></td>
-      <td><%= link_to image_tag("icons/show.png", :size => "24x24"), [:admin, equipment_miscellaneou], :title => t('general.show') %></td>
-      <td><%= link_to image_tag("icons/edit.png", :size => "24x24"), edit_admin_equipment_miscellaneou_path(equipment_miscellaneou), :title => t('general.edit') %></td>
-      <td><%= link_to image_tag("icons/clean.png", :size => "24x24"), "/admin/equipment_miscellaneous/take_out/#{equipment_miscellaneou.id}", :title => t("equipment.index.take_out")  %></td>
+      <% if current_user.has_perm?("equipment_miscellaneous_equipment_miscellaneous_can_show") %>
+        <td><%= link_to image_tag("icons/show.png", :size => "24x24"), [:admin, equipment_miscellaneou], :title => t('general.show') %></td>
+      <% end %>
+      <% if current_user.has_perm?("equipment_miscellaneous_equipment_miscellaneous_can_edit") %>
+        <td><%= link_to image_tag("icons/edit.png", :size => "24x24"), edit_admin_equipment_miscellaneou_path(equipment_miscellaneou), :title => t('general.edit') %></td>
+      <% end %>
+      <% if current_user.has_perm?("equipment_miscellaneous_equipment_miscellaneous_can_take_out") %>
+        <td><%= link_to image_tag("icons/clean.png", :size => "24x24"), "/admin/equipment_miscellaneous/take_out/#{equipment_miscellaneou.id}", :title => t("equipment.index.take_out")  %></td>
+      <% end %>
       <!--
       <td><%#= link_to 'Destroy', [:admin, equipment_miscellaneou], :confirm => 'Are you sure?', :method => :delete %></td>
       -->
@@ -34,4 +42,6 @@
 <%= will_paginate @equipment_miscellaneous %>
 <br />
 
-<%= link_to t('general.new'), new_admin_equipment_miscellaneou_path %>
+  <% if current_user.has_perm?("equipment_miscellaneous_equipment_miscellaneous_can_create") %>
+    <%= link_to t('general.new'), new_admin_equipment_miscellaneou_path %>
+  <% end %>
