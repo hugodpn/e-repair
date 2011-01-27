@@ -25,6 +25,7 @@
   <%=h (@request_repair.repair_id != nil)? "true" : "false" %>
 </p>
 
-
-<%= link_to t("general.edit"), edit_admin_request_repair_path(@request_repair) %> |
+<% if current_user.has_perm?("request_repairs_request_repairs_can_edit") %>
+  <%= link_to t("general.edit"), edit_admin_request_repair_path(@request_repair) %> |
+<% end %>
 <%= link_to t("general.back"), admin_request_repairs_path %>

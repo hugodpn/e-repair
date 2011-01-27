@@ -65,7 +65,7 @@ class Permission < ActiveRecord::Base
       :request_repairs => {
         :title => "Request Repairs",
         :columns => ["can"],
-        :rows => ["list", "show", "update", "create", "destroy"]
+        :rows => ["list", "show", "edit", "create", "destroy", "repair"]
       }
     }, :repairs => {
       :repairs => {

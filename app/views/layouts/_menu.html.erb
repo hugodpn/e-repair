@@ -20,7 +20,9 @@
     <% if current_user.has_perm?("equipment_miscellaneous_equipment_miscellaneous_can_list") %>
       <li><%= link_to t('menu.home.equipment'), admin_equipment_miscellaneous_path  %></li>
     <% end %>
+    <% if current_user.has_perm?("request_repairs_request_repairs_can_list") %>
     <li><%= link_to t('menu.home.request_repair'), admin_request_repairs_path %></li>
+    <% end %>
     <li><%= link_to t('menu.home.repair'), admin_repairs_path %></li>
     <li><%= link_to t('menu.home.repaired'),"/admin/repairs?repaired=true"  %></li>
     <li><hr /></li>
