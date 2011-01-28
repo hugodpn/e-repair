@@ -92,9 +92,10 @@
 <p>
   <b><%= t('users.fields.roles') %>:</b>
   <% @user.roles.each do |r| %>
-    <%= r.name %>, 
+    <%= r.name %>,
   <% end %>
 </p>
-
-<%= link_to t('general.edit'), edit_admin_user_path(@user) %> |
+<% if current_user.has_perm?("users_users_can_edit") %>
+  <%= link_to t('general.edit'), edit_admin_user_path(@user) %> |
+<% end %>
 <%= link_to t('general.back'), admin_users_path %>

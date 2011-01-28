@@ -1,7 +1,6 @@
-class ConfigController < ApplicationController
+class AdmintabController < ApplicationController
 
   skip_before_filter :require_authentification, :only => [:index]
-
 
   def index
   end

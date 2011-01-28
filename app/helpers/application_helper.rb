@@ -3,11 +3,11 @@ module ApplicationHelper
 
   def is_config_menu
     ["departments", "equipment_types", "equipment_locations", 
-     "reason_faults", "config"].include?(controller.controller_name)
+     "reason_faults", "configtab"].include?(controller.controller_name)
   end
 
   def is_admin_menu
-    ["users", "roles"].include?(controller.controller_name)
+    ["users", "roles", "admintab"].include?(controller.controller_name)
   end
 
   def is_home_menu

@@ -1,17 +1,25 @@
 <h1><%= t('roles.listing_roles') %></h1>
 
+<% if current_user.has_perm?("roles_roles_can_create") %>
+  <p>
+    <%= link_to t('general.new'), new_admin_role_path %>
+  </p>
+<% end %>
+
 <table class="normal_table">
   <th><%= t('roles.fields.name') %></th>
   <% @roles.each do |role|  %>
     <tr>
       <td><%= role.name %></td>
-      <td><%= link_to t('general.show'), [:admin, role] %></td>
-      <td><%= link_to t('general.edit'), '/admin/roles/' + role.id.to_s + '/edit?model=' + Permission::PERMISSIONS.first.first.to_s %></td>
-      <td><%= link_to t('general.destroy'), [:admin, role], :confirm => t('general.confirmation'), :method => :delete %></td>
-
-      <td><%= link_to image_tag("icons/show.png", :size => "24x24"), [:admin, role], :title => t('general.show') %></td>
-      <td><%= link_to image_tag("icons/edit.png", :size => "24x24"), '/admin/roles/' + role.id.to_s + '/edit?model=' + Permission::PERMISSIONS.first.first.to_s, :title => t('general.edit') %></td>
-      <td><%= link_to image_tag("icons/destroy.png", :size => "24x24"), [:admin, role], :confirm => t("general.confirmation"), :method => :delete, :title => t('general.destroy')  %></td>
+      <% if current_user.has_perm?("roles_roles_can_show") %>
+        <td><%= link_to image_tag("icons/show.png", :size => "24x24"), [:admin, role], :title => t('general.show') %></td>
+      <% end %>
+      <% if current_user.has_perm?("roles_roles_can_edit") %>
+        <td><%= link_to image_tag("icons/edit.png", :size => "24x24"), '/admin/roles/' + role.id.to_s + '/edit?model=' + Permission::PERMISSIONS.first.first.to_s, :title => t('general.edit') %></td>
+      <% end %>
+      <% if current_user.has_perm?("roles_roles_can_destroy") %>
+        <td><%= link_to image_tag("icons/destroy.png", :size => "24x24"), [:admin, role], :confirm => t("general.confirmation"), :method => :delete, :title => t('general.destroy')  %></td>
+      <% end %>
 
 
 
@@ -20,5 +28,9 @@
 </table>
 
 <br />
+<% if current_user.has_perm?("roles_roles_can_create") %>
+  <p>
+    <%= link_to t('general.new'), new_admin_role_path %>
+  </p>
+<% end %>
 
-<%= link_to t('general.new'), new_admin_role_path %>

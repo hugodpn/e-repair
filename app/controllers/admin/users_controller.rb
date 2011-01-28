@@ -1,7 +1,7 @@
 class Admin::UsersController < ApplicationController
 
   def index
-    unless current_user.has_perm?("users_user_can_list")
+    unless current_user.has_perm?("users_users_can_list")
       permission_deny
     else
       @users = User.all
@@ -9,7 +9,7 @@ class Admin::UsersController < ApplicationController
   end
 
   def show
-    unless current_user.has_perm?("users_user_can_show")
+    unless current_user.has_perm?("users_users_can_show")
       permission_deny
     else
       @user = User.find(params[:id])
@@ -22,7 +22,7 @@ class Admin::UsersController < ApplicationController
   end
 
   def edit
-    unless current_user.has_perm?("users_user_can_update")
+    unless current_user.has_perm?("users_users_can_edit")
       permission_deny
     else
       @user = User.find(params[:id])
@@ -31,7 +31,7 @@ class Admin::UsersController < ApplicationController
   end
 
   def update
-    unless current_user.has_perm?("users_user_can_update")
+    unless current_user.has_perm?("users_users_can_edit")
       permission_deny
     else
       params[:user][:role_ids] ||= []
@@ -52,7 +52,7 @@ class Admin::UsersController < ApplicationController
   end
 
   def new
-    unless current_user.has_perm?("users_user_can_create")
+    unless current_user.has_perm?("users_users_can_create")
       permission_deny
     else
       @user = User.new
@@ -66,7 +66,7 @@ class Admin::UsersController < ApplicationController
   end
 
   def create
-    unless current_user.has_perm?("users_user_can_create")
+    unless current_user.has_perm?("users_users_can_create")
       permission_deny
     else
       @user = User.new(params[:user])
@@ -86,7 +86,7 @@ class Admin::UsersController < ApplicationController
   end
 
   def destroy
-    unless current_user.has_perm?("users_user_can_destroy")
+    unless current_user.has_perm?("users_users_can_destroy")
       permission_deny
     else
       @user = User.find(params[:id])

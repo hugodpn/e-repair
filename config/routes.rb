@@ -9,7 +9,8 @@ ActionController::Routing::Routes.draw do |map|
   map.resources :user_sessions
   map.resources :users
   map.resources :helps
-  map.resources :config
+  map.resources :configtab
+  map.resources :admintab
 
   map.namespace :admin do |admin|
     admin.resources :articles

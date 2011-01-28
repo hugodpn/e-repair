@@ -1,7 +1,7 @@
 class Admin::RolesController < ApplicationController
 
   def index
-    unless current_user.has_perm?("roles_role_can_list")
+    unless current_user.has_perm?("roles_roles_can_list")
       permission_deny
     else
       @roles = Role.find(:all)
@@ -9,7 +9,7 @@ class Admin::RolesController < ApplicationController
   end
 
   def new
-    unless current_user.has_perm?("roles_role_can_create")
+    unless current_user.has_perm?("roles_roles_can_create")
       permission_deny
     else
       @role = Role.new
@@ -22,7 +22,7 @@ class Admin::RolesController < ApplicationController
   end
 
   def create
-    unless current_user.has_perm?("roles_role_can_create")
+    unless current_user.has_perm?("roles_roles_can_create")
       permission_deny
     else
       @role = Role.new(params[:role])
@@ -41,7 +41,7 @@ class Admin::RolesController < ApplicationController
   end
 
   def show
-    unless current_user.has_perm?("roles_role_can_show")
+    unless current_user.has_perm?("roles_roles_can_show")
       permission_deny
     else
       @role = Role.find(params[:id])
@@ -54,7 +54,7 @@ class Admin::RolesController < ApplicationController
   end
 
   def destroy
-    unless current_user.has_perm?("roles_role_can_destroy")
+    unless current_user.has_perm?("roles_roles_can_destroy")
       permission_deny
     else
       @role = Role.find(params[:id])
@@ -68,7 +68,7 @@ class Admin::RolesController < ApplicationController
   end
 
   def edit
-    unless current_user.has_perm?("roles_role_can_update")
+    unless current_user.has_perm?("roles_roles_can_edit")
       permission_deny
     else
       @role = Role.find(params[:id])
@@ -76,7 +76,7 @@ class Admin::RolesController < ApplicationController
   end
 
   def update
-    unless current_user.has_perm?("roles_role_can_update")
+    unless current_user.has_perm?("roles_roles_can_edit")
       permission_deny
     else
       @role = Role.find(params[:id])

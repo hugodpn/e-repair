@@ -2,5 +2,7 @@
 
 <%= render @user %>
 
+<% if current_user.has_perm?("users_users_can_show") %>
 <%= link_to t('general.show'), [:admin, @user] %> |
+<% end %>
 <%= link_to t('general.back'), admin_users_path %>
