@@ -5,6 +5,7 @@
   <%=h @equipment_location.name %>
 </p>
 
-
-<%= link_to t('general.edit'), edit_admin_equipment_location_path(@equipment_location) %> |
+<% if current_user.has_perm?("equipment_locations_equipment_locations_can_edit") %>
+  <%= link_to t('general.edit'), edit_admin_equipment_location_path(@equipment_location) %> |
+<% end %>
 <%= link_to t('general.back'), admin_equipment_locations_path %>

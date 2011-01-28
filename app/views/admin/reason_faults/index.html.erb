@@ -1,5 +1,11 @@
 <h1><%= t('reason_fault.index.title') %></h1>
 
+<% if current_user.has_perm?("reason_faults_reason_faults_can_create") %>
+  <p>
+    <%= link_to t('general.new'), new_admin_reason_fault_path %>
+  </p>
+<% end %>
+
 <table class="normal_table">
   <tr>
     <th><%= t('reason_fault.model.name') %></th>
@@ -8,13 +14,22 @@
   <% @reason_faults.each do |reason_fault| %>
     <tr>
       <td><%=h reason_fault.name %></td>
-      <td><%= link_to image_tag("icons/show.png", :size => "24x24"), [:admin, reason_fault], :title => t('general.show') %></td>
-      <td><%= link_to image_tag("icons/edit.png", :size => "24x24"), edit_admin_reason_fault_path(reason_fault), :title => t('general.edit') %></td>
-      <td><%= link_to image_tag("icons/destroy.png", :size => "24x24"), [:admin, reason_fault], :confirm => t("general.confirmation"), :method => :delete, :title => t('general.destroy')  %></td>
+      <% if current_user.has_perm?("reason_faults_reason_faults_can_show") %>
+        <td><%= link_to image_tag("icons/show.png", :size => "24x24"), [:admin, reason_fault], :title => t('general.show') %></td>
+      <% end %>
+      <% if current_user.has_perm?("reason_faults_reason_faults_can_edit") %>
+        <td><%= link_to image_tag("icons/edit.png", :size => "24x24"), edit_admin_reason_fault_path(reason_fault), :title => t('general.edit') %></td>
+      <% end %>
+      <% if current_user.has_perm?("reason_faults_reason_faults_can_destroy") %>
+        <td><%= link_to image_tag("icons/destroy.png", :size => "24x24"), [:admin, reason_fault], :confirm => t("general.confirmation"), :method => :delete, :title => t('general.destroy')  %></td>
+      <% end %>
     </tr>
   <% end %>
 </table>
 
 <br />
-
-<%= link_to t('general.new'), new_admin_reason_fault_path %>
+<% if current_user.has_perm?("reason_faults_reason_faults_can_create") %>
+  <p>
+    <%= link_to t('general.new'), new_admin_reason_fault_path %>
+  </p>
+<% end %>

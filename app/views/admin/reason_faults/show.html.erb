@@ -5,6 +5,7 @@
   <%=h @reason_fault.name %>
 </p>
 
-
-<%= link_to t('general.edit'), edit_admin_reason_fault_path(@reason_fault) %> |
+<% if current_user.has_perm?("reason_faults_reason_faults_can_edit") %>
+  <%= link_to t('general.edit'), edit_admin_reason_fault_path(@reason_fault) %> |
+<% end %>
 <%= link_to t('general.back'), admin_reason_faults_path %>

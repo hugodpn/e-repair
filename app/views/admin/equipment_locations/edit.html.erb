@@ -12,5 +12,7 @@
   </p>
 <% end %>
 
-<%= link_to t('general.show'), [:admin, @equipment_location] %> |
+<% if current_user.has_perm?("equipment_locations_equipment_locations_can_show") %>
+  <%= link_to t('general.show'), [:admin, @equipment_location] %> |
+<% end %>
 <%= link_to t('general.back'), admin_equipment_locations_path %>

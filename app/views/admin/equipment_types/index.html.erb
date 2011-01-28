@@ -1,5 +1,11 @@
 <h1><%= t('equipment_type.index.title') %></h1>
 
+<% if current_user.has_perm?("equipment_types_equipment_types_can_create") %>
+  <p>
+    <%= link_to t('general.new'), new_admin_equipment_type_path %>
+  </p>
+<% end %>
+
 <table class="normal_table">
   <tr>
     <th><%= t('equipment_type.model.name') %></th>
@@ -8,13 +14,23 @@
   <% @equipment_types.each do |equipment_type| %>
     <tr>
       <td><%=h equipment_type.name %></td>
-      <td><%= link_to image_tag("icons/show.png", :size => "24x24"), [:admin, equipment_type], :title => t('general.show') %></td>
-      <td><%= link_to image_tag("icons/edit.png", :size => "24x24"), edit_admin_equipment_type_path(equipment_type), :title => t('general.edit') %></td>
+      <% if current_user.has_perm?("equipment_types_equipment_types_can_show") %>
+        <td><%= link_to image_tag("icons/show.png", :size => "24x24"), [:admin, equipment_type], :title => t('general.show') %></td>
+      <% end %>
+      <% if current_user.has_perm?("equipment_types_equipment_types_can_edit") %>
+        <td><%= link_to image_tag("icons/edit.png", :size => "24x24"), edit_admin_equipment_type_path(equipment_type), :title => t('general.edit') %></td>
+      <% end %>
+      <% if current_user.has_perm?("equipment_types_equipment_types_can_destroy") %>
       <td><%= link_to image_tag("icons/destroy.png", :size => "24x24"), [:admin, equipment_type], :confirm => t("general.confirmation"), :method => :delete, :title => t('general.destroy')  %></td>
+      <% end %>
     </tr>
   <% end %>
 </table>
 
-<br />
+  <br />
 
-<%= link_to t('general.new'), new_admin_equipment_type_path %>
+<% if current_user.has_perm?("equipment_types_equipment_types_can_create") %>
+  <p>
+    <%= link_to t('general.new'), new_admin_equipment_type_path %>
+  </p>
+<% end %>

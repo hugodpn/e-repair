@@ -16,5 +16,7 @@
   </p>
 <% end %>
 
-<%= link_to t('general.show'), [:admin, @department] %> |
+<% if current_user.has_perm?("departments_departments_can_show") %>
+  <%= link_to t('general.show'), [:admin, @department] %> |
+<% end %>
 <%= link_to t('general.back'), admin_departments_path %>

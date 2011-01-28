@@ -12,5 +12,7 @@
   </p>
 <% end %>
 
-<%= link_to t('general.show'), [:admin, @reason_fault] %> |
+<% if current_user.has_perm?("reason_faults_reason_faults_can_show") %>
+  <%= link_to t('general.show'), [:admin, @reason_fault] %> |
+<% end %>
 <%= link_to t('general.back'), admin_reason_faults_path %>

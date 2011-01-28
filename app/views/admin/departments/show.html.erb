@@ -10,6 +10,7 @@
   <%=h @department.alias %>
 </p>
 
-
-<%= link_to t('general.edit'), edit_admin_department_path(@department) %> |
+<% if current_user.has_perm?("departments_departments_can_edit") %>
+  <%= link_to t('general.edit'), edit_admin_department_path(@department) %> |
+<% end %>
 <%= link_to t('general.back'), admin_departments_path %>

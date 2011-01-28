@@ -84,37 +84,37 @@ class Permission < ActiveRecord::Base
       :departments => {
         :title => "Department",
         :columns => ["can"],
-        :rows => ["list", "show", "update", "create", "destroy"]
+        :rows => ["list", "show", "edit", "create", "destroy"]
       }
     }, :equipment_types => {
       :equipment_types => {
         :title => "Equipment Types",
         :columns => ["can"],
-        :rows => ["list", "show", "update", "create", "destroy"]
+        :rows => ["list", "show", "edit", "create", "destroy"]
       }
     }, :equipment_locations => {
       :equipment_locations => {
         :title => "Equipment Locations",
         :columns => ["can"],
-        :rows => ["list", "show", "update", "create", "destroy"]
+        :rows => ["list", "show", "edit", "create", "destroy"]
       }
     }, :reason_faults => {
       :reason_faults => {
         :title => "Reason Faults",
         :columns => ["can"],
-        :rows => ["list", "show", "update", "create", "destroy"]
+        :rows => ["list", "show", "edit", "create", "destroy"]
       }
     }, :users => {
       :users => {
         :title => "Users",
         :columns => ["can"],
-        :rows => ["list", "show", "update", "create", "destroy"]
+        :rows => ["list", "show", "edit", "create", "destroy"]
       }
     }, :roles => {
       :roles => {
         :title => "Roles",
         :columns => ["can"],
-        :rows => ["list", "show", "update", "create", "destroy"]
+        :rows => ["list", "show", "edit", "create", "destroy"]
       }
     }, :tabs => {
       :tabs => {
