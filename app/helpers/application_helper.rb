@@ -3,7 +3,7 @@ module ApplicationHelper
 
   def is_config_menu
     ["departments", "equipment_types", "equipment_locations", 
-     "reason_faults"].include?(controller.controller_name)
+     "reason_faults", "config"].include?(controller.controller_name)
   end
 
   def is_admin_menu

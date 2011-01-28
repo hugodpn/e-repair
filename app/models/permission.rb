@@ -71,13 +71,14 @@ class Permission < ActiveRecord::Base
       :repairs => {
         :title => "Repairs",
         :columns => ["can"],
-        :rows => ["list", "show", "update", "create", "destroy"]
+        :rows => ["list", "show", "edit", "destroy"]
       }
     }, :reports => {
       :reports => {
         :title => "Reports",
         :columns => ["can"],
-        :rows => ["repair_costs", "take_out", "request_repairs", "repairs", "pending_repairs", "repairs_by_equipment", "repairs_by_department"]
+        :rows => ["repair_costs", "take_out", "request_repairs", "repairs", "pending_repairs",
+          "repairs_by_equipment", "repairs_by_department"]
       }
     }, :departments => {
       :departments => {
@@ -114,6 +115,12 @@ class Permission < ActiveRecord::Base
         :title => "Roles",
         :columns => ["can"],
         :rows => ["list", "show", "update", "create", "destroy"]
+      }
+    }, :tabs => {
+      :tabs => {
+        :title => "Tabs",
+        :columns => ["can"],
+        :rows => ["reports", "config", "admin", "help"]
       }
     }
   }

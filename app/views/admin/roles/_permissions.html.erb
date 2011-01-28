@@ -20,7 +20,7 @@
         <% Permission::PERMISSIONS[(params[:model]).to_sym].each do |table, other| %>
           <h2><%= Permission::PERMISSIONS[(params[:model]).to_sym][table.to_sym][:title] %></h2>
           <table>
-            <th><%= table %></th>
+            <th><%#= table %></th>
             <% Permission::PERMISSIONS[(params[:model]).to_sym][table.to_sym][:columns].each do |col| %>
               <th><%= col %></th>
             <% end %>

@@ -48,5 +48,7 @@
   </p>
 <% end %>
 
-<%= link_to t("general.show"), [:admin, @repair] %> |
+<% if current_user.has_perm?("repairs_repairs_can_show") %>
+  <%= link_to t("general.show"), [:admin, @repair] %> |
+<% end %>
 <%= link_to t("general.back"), admin_repairs_path %>

@@ -50,6 +50,7 @@
   <%=h @repair.observations %>
 </p>
 
-
-<%= link_to t("general.update"), edit_admin_repair_path(@repair) %> |
+<% if current_user.has_perm?("repairs_repairs_can_edit") %>
+  <%= link_to t("general.update"), edit_admin_repair_path(@repair) %> |
+<% end %>
 <%= link_to t("general.back"), admin_repairs_path %>
