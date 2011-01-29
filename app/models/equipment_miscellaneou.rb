@@ -30,7 +30,11 @@ class EquipmentMiscellaneou < ActiveRecord::Base
   has_many :repairs
   belongs_to :user, :class_name => "User", :foreign_key => "take_out_user_id"
 
-  validates_presence_of :brand, :inventory_number
+  validates_presence_of :brand
+  validates_presence_of :inventory_number
+  validates_presence_of :equipment_type_id
+  validates_presence_of :equipment_location_id
+  validates_presence_of :department_id
   validates_numericality_of :inventory_number
 
   cattr_reader :per_page
