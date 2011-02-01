@@ -6,6 +6,7 @@ require 'spec/autorun'
 require 'spec/rails'
 require 'authlogic/test_case'
 include Authlogic::TestCase
+require 'spec/integration'
 
 
 # Uncomment the next line to use webrat's matchers

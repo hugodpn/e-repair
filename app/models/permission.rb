@@ -59,7 +59,7 @@ class Permission < ActiveRecord::Base
       :equipment_miscellaneous => {
         :title => "Equipment miscellaneous",
         :columns => ["can"],
-        :rows => ["list", "show", "edit", "create", "destroy", "take_out"]
+        :rows => ["list", "show", "edit", "create", "take_out"]
       }
     }, :request_repairs => {
       :request_repairs => {
