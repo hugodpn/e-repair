@@ -10,5 +10,9 @@
 #
 
 class EquipmentType < ActiveRecord::Base
-  has_many :equpment_miscellaneous
+
+  has_many :equpment_miscellaneous, :dependent => :destroy
+
+  validates_presence_of :name
+
 end

@@ -11,6 +11,12 @@
 #
 
 class Department < ActiveRecord::Base
-  has_many :request_repairs
-  has_many :equipment_miscellaneous
+  has_many :request_repairs, :dependent => :destroy
+  has_many :equipment_miscellaneous, :dependent => :destroy
+
+  validates_presence_of :name
+  validates_presence_of :alias
+  validates_uniqueness_of :name
+  validates_uniqueness_of :alias
+
 end

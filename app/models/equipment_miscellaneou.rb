@@ -27,7 +27,7 @@ class EquipmentMiscellaneou < ActiveRecord::Base
   belongs_to :equipment_type
   belongs_to :equipment_location
   belongs_to :department
-  has_many :repairs
+  has_many :repairs, :dependent => :destroy
   belongs_to :user, :class_name => "User", :foreign_key => "take_out_user_id"
 
   validates_presence_of :brand
@@ -36,6 +36,7 @@ class EquipmentMiscellaneou < ActiveRecord::Base
   validates_presence_of :equipment_location_id
   validates_presence_of :department_id
   validates_numericality_of :inventory_number
+  validates_uniqueness_of :inventory_number
 
   cattr_reader :per_page
   @@per_page = 20

@@ -10,5 +10,7 @@
 #
 
 class ReasonFault < ActiveRecord::Base
-  has_many :repairs
+  has_many :repairs, :dependent => :destroy
+
+  validates_presence_of :name
 end

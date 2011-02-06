@@ -1,12 +1,19 @@
-<h1>Application Base</h1>
+E-REPAIR
 
-<p>It's a little blog that can be used as base of your own applications.</b>
+This is a final work of university course.
 
-<p>hpacini@dhpn.com.ar</p>
+In order to satisfy the requirements about a functional application with reports,
+configurations, internationalizations and security module I created a little application
+to register the repairs of equipments  in some institution (eg a hospital).
 
-<br /><br />
+Some points interested to see are:
+- The security authentication with authlogic
+- The way that the user restore the password using a gmail account.
+- The permissions handle with acts_as_permissible
+- The internationalizations
+- Some unit test with rspec
+- The logic to register one repair
 
-Run to view test coverage.
+This system can be changed to adapt at your necessity. Can be a good point to start.
 
-# rcov test/*.rb
-
+If you want to contact me you can send me an email to hugodpn@yahoo.com.ar and I hope help you.
